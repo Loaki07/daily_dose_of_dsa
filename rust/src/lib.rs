@@ -10,6 +10,9 @@ pub use lc_0020_valid_parentheses::*;
 pub mod lc_0021_merge_two_sorted_lists;
 pub use lc_0021_merge_two_sorted_lists::*;
 
+pub mod lc_0075_sort_colors;
+pub use lc_0075_sort_colors::*;
+
 pub mod lc_0121_best_time_to_buy_and_sell_stock;
 pub use lc_0121_best_time_to_buy_and_sell_stock::*;
 
