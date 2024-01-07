@@ -25,6 +25,9 @@ pub use lc_0206_reverse_linked_list::*;
 pub mod lc_0242_valid_anagram;
 pub use lc_0242_valid_anagram::*;
 
+pub mod lc_0278_first_bad_version;
+pub use lc_0278_first_bad_version::*;
+
 pub mod lc_0509_fibonacci_number;
 pub use lc_0509_fibonacci_number::*;
 
