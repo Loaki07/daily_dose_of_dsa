@@ -10,6 +10,9 @@ pub use lc_0020_valid_parentheses::*;
 pub mod lc_0021_merge_two_sorted_lists;
 pub use lc_0021_merge_two_sorted_lists::*;
 
+pub mod lc_0035_search_insert_position;
+pub use lc_0035_search_insert_position::*;
+
 pub mod lc_0075_sort_colors;
 pub use lc_0075_sort_colors::*;
 
