@@ -6,9 +6,11 @@ fn heapify<T: Ord>(arr: &mut [T]) {
     }
 }
 
-/// Move the element at `root` down until `arr` is a min heap again.
+/// Move the element at `root` down until `arr` is
+/// a min heap again.
 ///
-/// This assumes that the subtrees under `root` are valid min heaps already.
+/// This assumes that the subtrees under `root`
+/// are valid min heaps already.
 fn move_down<T: Ord>(arr: &mut [T], mut root: usize) {
     let last = arr.len() - 1;
     loop {
@@ -23,7 +25,8 @@ fn move_down<T: Ord>(arr: &mut [T], mut root: usize) {
             smallest = right;
         }
 
-        // If the root is smaller than both of its children, we're done.
+        // If the root is smaller than both of its
+        // children, we're done.
         if smallest == root {
             break;
         }
@@ -31,11 +34,11 @@ fn move_down<T: Ord>(arr: &mut [T], mut root: usize) {
         // Swap the smallest child with the root.
         arr.swap(root, smallest);
 
-        // Continue sifting down from the child's position.
+        // Continue sifting down from the child's
+        // position.
         root = smallest;
     }
 }
-
 
 /// Perform heap sort using the min heap.
 pub fn heap_sort<T: Ord>(arr: &mut [T]) {
@@ -46,11 +49,14 @@ pub fn heap_sort<T: Ord>(arr: &mut [T]) {
     // First, turn the array into a min heap.
     heapify(arr);
 
-    // Then, repeatedly swap the root of the heap with the last element,
-    // reducing the heap size by one each time, and sift down the new root to
-    // maintain the heap property. This effectively sorts the array in place.
+    // Then, repeatedly swap the root of the heap with
+    // the last element, reducing the heap size by
+    // one each time, and sift down the new root to
+    // maintain the heap property. This effectively
+    // sorts the array in place.
     for end in (1..arr.len()).rev() {
-        arr.swap(0, end); // Swap the minimum element to its correct position
+        arr.swap(0, end); // Swap the minimum element to its correct
+                          // position
         move_down(&mut arr[..end], 0); // Restore the min heap property
     }
 }
