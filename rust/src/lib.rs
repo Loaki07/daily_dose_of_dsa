@@ -25,6 +25,9 @@ pub use lc_0125_valid_palindrome::*;
 pub mod lc_0206_reverse_linked_list;
 pub use lc_0206_reverse_linked_list::*;
 
+pub mod lc_0232_implement_queue_using_stacks;
+pub use lc_0232_implement_queue_using_stacks::*;
+
 pub mod lc_0242_valid_anagram;
 pub use lc_0242_valid_anagram::*;
 
