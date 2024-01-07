@@ -25,6 +25,9 @@ pub use lc_0125_valid_palindrome::*;
 pub mod lc_0206_reverse_linked_list;
 pub use lc_0206_reverse_linked_list::*;
 
+pub mod lc_0215_kth_largest_element_in_an_array;
+pub use lc_0215_kth_largest_element_in_an_array::*;
+
 pub mod lc_0217_contains_duplicate;
 pub use lc_0217_contains_duplicate::*;
 
