@@ -105,12 +105,17 @@ pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
     nums[nums.len() - k as usize]
 }
 
+pub fn find_kth_smallest(arr: &mut [i32], k: usize) -> i32 {
+    heap_sort(arr);
+    arr[k - 1]
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn test_quick_sort() {
+    fn test_heap_sort() {
         let mut v = vec![4, 6, 1, 19, 8, 11, 13, 3];
         heap_sort(&mut v);
         assert_eq!(v, vec![1, 3, 4, 6, 8, 11, 13, 19]);
@@ -132,5 +137,11 @@ mod tests {
         let nums = vec![3, 2, 3, 1, 2, 4, 5, 5, 6];
         let k = 4;
         assert_eq!(find_kth_largest(nums, k), 4);
+    }
+
+    #[test]
+    fn test_find_kth_smallest_ex1() {
+        let mut arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+        assert_eq!(find_kth_smallest(&mut arr, 3), 3);
     }
 }
