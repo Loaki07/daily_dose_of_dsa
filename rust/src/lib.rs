@@ -30,3 +30,6 @@ pub use lc_0509_fibonacci_number::*;
 
 pub mod lc_0704_binary_search;
 pub use lc_0704_binary_search::*;
+
+pub mod lc_0876_middle_of_the_linked_list;
+pub use lc_0876_middle_of_the_linked_list::*;
