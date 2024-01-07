@@ -40,6 +40,57 @@ pub fn merge_two_lists(
         l2 = entry.next;
     }
 
+    let mut result = None;
+
+    for entry in vec_result.iter().rev() {
+        let mut node = ListNode::new(*entry);
+        node.next = result;
+        result = Some(Box::new(node));
+    }
+
+    result
+}
+
+pub fn _merge_two_lists(
+    list1: Option<Box<ListNode>>,
+    list2: Option<Box<ListNode>>,
+) -> Option<Box<ListNode>> {
+    if list1.is_none() {
+        return list2;
+    }
+
+    if list2.is_none() {
+        return list1;
+    }
+
+    let mut l1 = list1;
+    let mut l2 = list2;
+
+    let mut vec_result = Vec::new();
+
+    while l1.is_some() && l2.is_some() {
+        let l1ref = l1.as_ref().unwrap().val;
+        let l2ref = l2.as_ref().unwrap().val;
+
+        if l1ref < l2ref {
+            vec_result.push(l1ref);
+            l1 = l1.unwrap().next;
+        } else {
+            vec_result.push(l2ref);
+            l2 = l2.unwrap().next;
+        }
+    }
+
+    while let Some(entry) = l1 {
+        vec_result.push(entry.val);
+        l1 = entry.next;
+    }
+
+    while let Some(entry) = l2 {
+        vec_result.push(entry.val);
+        l2 = entry.next;
+    }
+
     ListNode::from_vec(&vec_result)
 }
 
