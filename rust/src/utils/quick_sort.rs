@@ -29,14 +29,14 @@ pub fn quick_sort<T: PartialOrd + Debug>(v: &mut [T]) {
     quick_sort(&mut right[1..]);
 }
 
+// incomplete using std threads
 // struct RawSend<T>(*mut [T]);
 
 // unsafe impl<T> Send for RawSend<T> {}
 
-// incomplete
 // pub fn threaded_quick_sort<
-//     T: 'static +  PartialOrd + Debug + std::marker::Send,
-// >(
+//     T: 'static +  PartialOrd + Debug +
+// std::marker::Send, >(
 //     v: &mut [T],
 // ) {
 //     if v.len() <= 1 {
@@ -52,13 +52,33 @@ pub fn quick_sort<T: PartialOrd + Debug>(v: &mut [T]) {
 //     let raw_s = RawSend(raw_left);
 
 //     unsafe {
-//         let handle = std::thread::spawn(move || {
-//             threaded_quick_sort(&mut *raw_s.0);
-//         });
+//         let handle = std::thread::spawn(move ||
+// {             threaded_quick_sort(&mut
+// *raw_s.0);         });
 //         threaded_quick_sort(&mut right[1..]);
 //         handle.join().ok();
 //     }
 // }
+
+pub fn quick_sort_rayon<T: PartialOrd + Debug + Send>(
+    v: &mut [T],
+) {
+    if v.len() <= 1 {
+        return;
+    }
+
+    let p = pivot(v);
+
+    let (left, right) = v.split_at_mut(p);
+    
+    // put f2 on the queue and then start f1
+    // if another thread is ready it will steal f2
+    // this works recursively down the stack
+    rayon::join(
+        || quick_sort_rayon(left),
+        || quick_sort_rayon(&mut right[1..]),
+    );
+}
 
 #[cfg(test)]
 mod test {
@@ -83,6 +103,17 @@ mod test {
 
         let mut v = vec![1, 2, 6, 7, 9, 12, 13, 14];
         quick_sort(&mut v);
+        assert_eq!(v, vec![1, 2, 6, 7, 9, 12, 13, 14]);
+    }
+
+    #[test]
+    fn test_quick_sort_rayon() {
+        let mut v = vec![4, 6, 1, 19, 8, 11, 13, 3];
+        quick_sort_rayon(&mut v);
+        assert_eq!(v, vec![1, 3, 4, 6, 8, 11, 13, 19]);
+
+        let mut v = vec![1, 2, 6, 7, 9, 12, 13, 14];
+        quick_sort_rayon(&mut v);
         assert_eq!(v, vec![1, 2, 6, 7, 9, 12, 13, 14]);
     }
 }
