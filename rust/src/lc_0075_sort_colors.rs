@@ -2,6 +2,40 @@ pub struct Solution;
 
 impl Solution {
     pub fn sort_colors(nums: &mut Vec<i32>) {
+        let mut i = 0; // front pointer
+        let mut j = 0; // middle pointer
+        let mut k = nums.len() - 1; // back pointer
+
+        // Dijkstra's Dutch national flag algorithm
+        while j <= k {
+            match nums[j] {
+                // contidion to handle value less than mid
+                0 => {
+                    nums.swap(i, j);
+                    i += 1;
+                    j += 1;
+                }
+                // condition to handle value equal to mid
+                1 => {
+                    j += 1;
+                }
+                // condition to handle value greater than
+                // mid
+                2 => {
+                    nums.swap(j, k);
+                    // condional to handle negative k,
+                    // index out of bounds
+                    if k < 2 {
+                        break;
+                    }
+                    k -= 1;
+                }
+                _ => panic!("invalid number in input"),
+            }
+        }
+    }
+
+    pub fn _sort_colors(nums: &mut Vec<i32>) {
         let mut count = [0, 0, 0];
 
         for n in nums.iter() {
