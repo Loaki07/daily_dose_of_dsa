@@ -29,6 +29,37 @@ pub fn quick_sort<T: PartialOrd + Debug>(v: &mut [T]) {
     quick_sort(&mut right[1..]);
 }
 
+// struct RawSend<T>(*mut [T]);
+
+// unsafe impl<T> Send for RawSend<T> {}
+
+// incomplete
+// pub fn threaded_quick_sort<
+//     T: 'static +  PartialOrd + Debug + std::marker::Send,
+// >(
+//     v: &mut [T],
+// ) {
+//     if v.len() <= 1 {
+//         return;
+//     }
+
+//     let p = pivot(v);
+//     dbg!(&v);
+
+//     let (left, right) = v.split_at_mut(p);
+
+//     let raw_left: *mut [T] = left as *mut [T];
+//     let raw_s = RawSend(raw_left);
+
+//     unsafe {
+//         let handle = std::thread::spawn(move || {
+//             threaded_quick_sort(&mut *raw_s.0);
+//         });
+//         threaded_quick_sort(&mut right[1..]);
+//         handle.join().ok();
+//     }
+// }
+
 #[cfg(test)]
 mod test {
     use super::*;
