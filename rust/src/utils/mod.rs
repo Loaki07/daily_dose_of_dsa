@@ -21,3 +21,6 @@ pub use heap_sort_max_heap::*;
 
 pub mod heap_sort_min_heap;
 pub use heap_sort_min_heap::*;
+
+pub mod singly_linked_list;
+pub use singly_linked_list::*;
