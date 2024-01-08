@@ -1,5 +1,10 @@
 use std::fmt::Debug;
 
+/// Best Case: O(n log n)
+/// Worst Case: O(n log n)
+/// Average Case: O(n log n)
+
+
 // sort the left half, O(n log n)
 // sort the right half, O(n log n)
 // bring the sorted halves together, O(n)

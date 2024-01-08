@@ -100,6 +100,10 @@ quick_select(&mut nums, 0, len - 1, len - k as usize)
 
 Calls quick_select with the entire array, but adjusts the index to find the k-th largest element (len - k).
 */
+
+/// Best Case: O(n)
+/// Worst Case: O(n²)
+/// Average Case: O(n)
 pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
     let mut nums = nums;
     let len = nums.len();

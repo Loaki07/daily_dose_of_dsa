@@ -18,6 +18,9 @@ pub fn pivot<T: PartialOrd>(v: &mut [T]) -> usize {
     p
 }
 
+/// Best Case: O(n log n)
+/// Worst Case: O(n²)
+/// Average Case: O(n log n)
 pub fn quick_sort<T: PartialOrd + Debug>(v: &mut [T]) {
     if v.len() <= 1 {
         return;
