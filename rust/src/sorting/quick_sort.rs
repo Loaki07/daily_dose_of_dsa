@@ -73,7 +73,7 @@ pub fn quick_sort_rayon<T: PartialOrd + Debug + Send>(
     let p = pivot(v);
 
     let (left, right) = v.split_at_mut(p);
-    
+
     // put f2 on the queue and then start f1
     // if another thread is ready it will steal f2
     // this works recursively down the stack

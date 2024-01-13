@@ -39,6 +39,7 @@ impl<T: Copy> From<Node<T>>
 pub struct List<T: Copy> {
     head: Option<NodePtr<T>>,
     tail: Option<NodePtr<T>>,
+    count: usize,
 }
 
 impl<T: Copy> List<T> {
@@ -46,6 +47,7 @@ impl<T: Copy> List<T> {
         Self {
             head: None,
             tail: None,
+            count: 0,
         }
     }
 
@@ -66,6 +68,8 @@ impl<T: Copy> List<T> {
                 }
             }
         }
+
+        self.count += 1;
     }
 
     pub fn push_back(&mut self, value: T) {
@@ -84,6 +88,8 @@ impl<T: Copy> List<T> {
                 self.tail = self.head.clone();
             }
         }
+
+        self.count += 1;
     }
 
     pub fn pop_front(&mut self) -> Option<T> {
@@ -103,6 +109,7 @@ impl<T: Copy> List<T> {
                     }
                 }
 
+                self.count -= 1;
                 Some(head.value)
             }
         }
@@ -126,6 +133,8 @@ impl<T: Copy> List<T> {
                         self.head.take();
                     }
                 };
+
+                self.count -= 1;
                 Some(tail.value)
             }
             None => None,
@@ -137,6 +146,95 @@ impl<T: Copy> List<T> {
             current: self.head.clone(),
             current_back: self.tail.clone(),
         }
+    }
+
+    pub fn remove_node(&mut self, node: &mut NodePtr<T>) {
+        // borrow mut on node
+        // take prev and next
+        // match prev, next conditions
+        // (set head tail)
+        // (route prev.next -> next)
+        // (route next.prev -> prev)
+
+        let (prev, next) = {
+            let mut node = node.borrow_mut();
+            let prev = match node.prev.take() {
+                None => None,
+                Some(prev) => prev.upgrade(),
+            };
+
+            let next = node.next.take();
+            (prev, next)
+        };
+
+        match (prev, next) {
+            (None, None) => {
+                self.head = None;
+                self.tail = None;
+            }
+            // we are at the head
+            (None, Some(next)) => {
+                next.borrow_mut().prev = None;
+                self.head.replace(next);
+            }
+            // we are at the tail
+            (Some(prev), None) => {
+                prev.borrow_mut().next = None;
+                self.tail.replace(prev);
+            }
+            (Some(prev), Some(next)) => {
+                next.borrow_mut()
+                    .prev
+                    .replace(Rc::downgrade(&prev));
+                prev.borrow_mut().next.replace(next);
+            }
+        }
+    }
+
+    pub fn move_node_to_back(
+        &mut self,
+        mut node: NodePtr<T>,
+    ) {
+        // remove node first
+        // push node to back
+        self.remove_node(&mut node);
+        self.push_node_back(node);
+    }
+
+    pub fn push_node_back(&mut self, node: NodePtr<T>) {
+        // take existing tail
+        // assign head if needed if tail already none
+        // route existing-tail.next -> node
+        // node.prev -> existing-tail
+        // se tail to node
+        match self.tail.take() {
+            // we are at the head
+            None => {
+                self.head.replace(node);
+                self.tail = self.head.clone();
+            }
+            Some(current_tail) => {
+                node.borrow_mut()
+                    .prev
+                    .replace(Rc::downgrade(&current_tail));
+                self.tail.replace(node);
+                current_tail.borrow_mut().next =
+                    self.tail.clone();
+            }
+        }
+    }
+
+    pub fn get_weak_tail(
+        &self,
+    ) -> Option<Weak<RefCell<Node<T>>>> {
+        match &self.tail {
+            None => None,
+            Some(tail) => Some(Rc::downgrade(tail)),
+        }
+    }
+
+    pub fn len(&self) -> usize {
+        self.count
     }
 }
 

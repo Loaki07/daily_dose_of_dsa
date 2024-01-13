@@ -7,11 +7,10 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
     let mut min = prices[0];
 
     for i in 1..prices.len() {
-        max = max.max(prices[i] - min);        
+        max = max.max(prices[i] - min);
         min = min.min(prices[i]);
         // dbg!(prices[i], max, min);
     }
-
 
     max
 }
