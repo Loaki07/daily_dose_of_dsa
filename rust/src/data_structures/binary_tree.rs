@@ -1,3 +1,96 @@
+// A binary tree is a fundamental data structure
+// in computer science and programming, which
+// consists of nodes, each having up to two
+// children. Here are the key features and
+// concepts related to binary trees:
+
+// 1. **Node Structure**: Each node in a binary
+//    tree typically contains three components:
+//    - **Data**: The value or the payload that
+//      the node stores.
+//    - **Left Child**: A reference or pointer to
+//      the left child node.
+//    - **Right Child**: A reference or pointer to
+//      the right child node.
+
+// 2. **Properties**:
+//    - **Root**: The topmost node in a binary
+//      tree is called the root.
+//    - **Children**: Nodes linked directly under
+//      another node are its children.
+//    - **Parent**: The converse notion of a
+//      child. Every node (except the root) has
+//      one parent.
+//    - **Leaf Nodes**: Nodes that do not have any
+//      children are known as leaves or leaf
+//      nodes.
+//    - **Depth**: The length of the path from the
+//      root to the node.
+//    - **Height**: The length of the longest path
+//      from the node to a leaf. The height of the
+//      tree is the height of the root.
+
+// 3. **Types of Binary Trees**:
+//    - **Full Binary Tree**: Every node other
+//      than the leaves has two children.
+//    - **Complete Binary Tree**: All levels are
+//      completely filled except possibly the last
+//      level, which is filled from left to right.
+//    - **Perfect Binary Tree**: A binary tree in
+//      which all interior nodes have two children
+//      and all leaves have the same depth or same
+//      level.
+//    - **Balanced Binary Tree**: A binary tree
+//      where the depth of all leaf nodes or nodes
+//      with two children differ by no more than
+//      1. AVL trees and Red-Black trees are
+//      examples of balanced binary trees.
+//    - **Binary Search Tree (BST)**: A special
+//      kind of binary tree where for each node,
+//      the left children are less than the node
+//      and the right children are greater.
+
+// 4. **Traversal Methods**:
+//    - **In-Order Traversal**: Visit left
+//      subtree, current node, then right subtree.
+//    - **Pre-Order Traversal**: Visit current
+//      node, then left subtree, then right
+//      subtree.
+//    - **Post-Order Traversal**: Visit left
+
+// subtree, right subtree, then current node.
+//    - **Level-Order Traversal (or Breadth-First
+//      Search)**: Visit nodes level by level from
+//      root.
+
+// 5. **Applications**:
+//    - Binary Trees are used in many areas of
+//      computer science, including expression
+//      parsing, search algorithms (like binary
+//      search trees), sorting algorithms,
+//      representing hierarchical data, and more.
+//    - They are the basis for more complex tree
+//      structures like AVL trees, Red-Black
+//      trees, Heaps, Syntax Trees, etc.
+
+// 6. **Efficiency**:
+//    - The efficiency of operations like
+//      searching, insertion, and deletion in a
+//      binary tree depends significantly on its
+//      height. In the worst case (like a linear
+//      chain), these operations can take O(n)
+//      time, where n is the number of nodes. For
+//      a balanced tree, they can be performed in
+//      O(log n) time.
+
+// Binary trees are fundamental because they
+// provide a basis for more advanced tree-based
+// data structures and algorithms, offering
+// efficient ways to store and retrieve data. The
+// concept of branching in two directions at each
+// node makes binary trees an extremely versatile
+// and widely used data structure.
+
 #[derive(Debug)]
 pub struct Tree {
     root: Option<Box<Node>>,
