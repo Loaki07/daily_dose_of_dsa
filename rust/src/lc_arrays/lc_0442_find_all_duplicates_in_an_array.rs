@@ -1,7 +1,5 @@
 use std::collections::{HashMap, HashSet};
 
-use rayon::result;
-
 // O(n^2)
 pub fn find_duplicates(mut nums: Vec<i32>) -> Vec<i32> {
     let mut result: Vec<i32> = Vec::new();
@@ -40,6 +38,30 @@ pub fn find_duplicates_set(nums: Vec<i32>) -> Vec<i32> {
     result.into_iter().collect::<Vec<i32>>()
 }
 
+pub fn find_duplicates_allocate(
+    nums: Vec<i32>,
+) -> Vec<i32> {
+    let mut arr = vec![0; nums.len()];
+    let mut result = HashSet::<i32>::new();
+    if nums.len() == 0 {
+        return vec![];
+    }
+
+    for i in nums {
+        if i <= 0 {
+            panic!("Invalid number for problem");
+        }
+
+        let a = &mut arr[(i - 1) as usize];
+        *a += 1;
+        if *a > 1 {
+            result.insert(i);
+        }
+    }
+
+    result.into_iter().collect::<Vec<i32>>()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -48,6 +70,10 @@ mod tests {
     fn works_to_find_duplicates_with_empty() {
         assert_eq!(find_duplicates(vec![]), vec![]);
         assert_eq!(find_duplicates_set(vec![]), vec![]);
+        assert_eq!(
+            find_duplicates_allocate(vec![]),
+            vec![]
+        );
     }
 
     #[test]
@@ -62,6 +88,12 @@ mod tests {
             ]),
             vec![2, 3]
         );
+        assert_eq!(
+            find_duplicates_allocate(vec![
+                4, 3, 2, 7, 8, 2, 3, 1
+            ]),
+            vec![2, 3]
+        );
     }
 
     #[test]
@@ -71,11 +103,19 @@ mod tests {
             find_duplicates_set(vec![1, 1, 2]),
             vec![1]
         );
+        assert_eq!(
+            find_duplicates_allocate(vec![1, 1, 2]),
+            vec![1]
+        );
     }
 
     #[test]
     fn ex3() {
         assert_eq!(find_duplicates(vec![1]), vec![]);
         assert_eq!(find_duplicates_set(vec![1]), vec![]);
+        assert_eq!(
+            find_duplicates_allocate(vec![1]),
+            vec![]
+        );
     }
 }
