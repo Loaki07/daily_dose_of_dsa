@@ -52,6 +52,9 @@ pub use lc_0242_valid_anagram::*;
 pub mod lc_0278_first_bad_version;
 pub use lc_0278_first_bad_version::*;
 
+pub mod lc_0442_find_all_duplicates_in_an_array;
+pub use lc_0442_find_all_duplicates_in_an_array::*;
+
 pub mod lc_0509_fibonacci_number;
 pub use lc_0509_fibonacci_number::*;
 
