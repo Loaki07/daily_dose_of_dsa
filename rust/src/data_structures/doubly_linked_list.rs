@@ -8,6 +8,8 @@ use std::cell::RefCell;
 // we can drop the weak in such condtiions
 use std::rc::{Rc, Weak};
 
+type NodePtr<T> = Rc<RefCell<Node<T>>>;
+
 #[derive(Debug)]
 pub struct Node<T: Copy> {
     pub value: T,
@@ -32,8 +34,6 @@ impl<T: Copy> From<Node<T>>
         Some(Rc::new(RefCell::new(node)))
     }
 }
-
-type NodePtr<T> = Rc<RefCell<Node<T>>>;
 
 #[derive(Debug)]
 pub struct List<T: Copy> {
@@ -131,11 +131,59 @@ impl<T: Copy> List<T> {
             None => None,
         }
     }
+
+    pub fn iter(&self) -> ListIterator<T> {
+        ListIterator {
+            current: self.head.clone(),
+            current_back: self.tail.clone(),
+        }
+    }
 }
 
 impl<T: Copy> Drop for List<T> {
     fn drop(&mut self) {
         while let Some(_) = self.pop_back() {}
+    }
+}
+
+pub struct ListIterator<T: Copy> {
+    current: Option<NodePtr<T>>,
+    current_back: Option<NodePtr<T>>,
+}
+
+impl<T: Copy> Iterator for ListIterator<T> {
+    type Item = T;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let current = self.current.take();
+        if current.is_none() {
+            return None;
+        }
+
+        let current = current.unwrap();
+        let current = current.borrow();
+        self.current = current.next.clone();
+        Some(current.value)
+    }
+}
+
+impl<T: Copy> DoubleEndedIterator for ListIterator<T> {
+    fn next_back(&mut self) -> Option<Self::Item> {
+        let current = self.current_back.take();
+        if current.is_none() {
+            return None;
+        }
+
+        let current = current.unwrap();
+        let current = current.borrow();
+
+        match &current.prev {
+            Some(prev) => {
+                self.current_back = prev.upgrade();
+                Some(current.value)
+            }
+            None => Some(current.value),
+        }
     }
 }
 
@@ -166,12 +214,37 @@ mod test {
         list.push_front(2);
         list.push_front(3);
         list.push_front(4);
-        dbg!(&list);
+        // dbg!(&list);
 
         assert_eq!(list.pop_front(), Some(4));
         assert_eq!(list.pop_front(), Some(3));
         assert_eq!(list.pop_front(), Some(2));
         assert_eq!(list.pop_front(), Some(1));
         assert_eq!(list.pop_front(), None);
+    }
+
+    #[test]
+    fn works_buuld_list_iter() {
+        let mut list = List::new();
+        list.push_front(1);
+        list.push_front(2);
+        list.push_front(3);
+        list.push_front(4);
+
+        for (i, j) in list.iter().zip(list.iter().rev()) {
+            // dbg!(i, j);
+        }
+
+        let mut iter = list.iter();
+        assert_eq!(iter.next(), Some(4));
+        assert_eq!(iter.next_back(), Some(1));
+        assert_eq!(iter.next(), Some(3));
+        assert_eq!(iter.next_back(), Some(2));
+        assert_eq!(iter.next(), Some(2));
+        assert_eq!(iter.next_back(), Some(3));
+        assert_eq!(iter.next(), Some(1));
+        assert_eq!(iter.next_back(), Some(4));
+        assert_eq!(iter.next(), None);
+        assert_eq!(iter.next_back(), None);
     }
 }
