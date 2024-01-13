@@ -1,6 +1,3 @@
-pub mod utils;
-pub use utils::*;
-
 pub mod data_structures;
 pub use data_structures::*;
 
@@ -12,6 +9,9 @@ pub use sorting::*;
 
 pub mod general;
 pub use general::*;
+
+pub mod lc_utils;
+pub use lc_utils::*;
 
 pub mod lc_arrays;
 pub use lc_arrays::*;
