@@ -1,6 +1,15 @@
 pub mod utils;
 pub use utils::*;
 
+pub mod data_structures;
+pub use data_structures::*;
+
+pub mod searching;
+pub use searching::*;
+
+pub mod sorting;
+pub use sorting::*;
+
 pub mod lc_0001_two_sum;
 pub use lc_0001_two_sum::*;
 
