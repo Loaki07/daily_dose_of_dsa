@@ -158,6 +158,59 @@ impl Tree {
         results
     }
 
+    fn traverse_inorder_recursive(
+        values: &mut Vec<i32>,
+        node: &Box<Node>,
+    ) {
+        if let Some(ref left) = node.left {
+            Tree::traverse_inorder_recursive(values, left);
+        }
+        values.push(node.value);
+
+        if let Some(ref right) = node.right {
+            Tree::traverse_inorder_recursive(values, right);
+        }
+    }
+
+    fn traverse_inorder_iterative(&self) -> Vec<i32> {
+        if self.root.is_none() {
+            return Vec::new();
+        }
+
+        let mut result: Vec<i32> = Vec::new();
+        let mut q: Vec<&Box<Node>> = Vec::new();
+        let mut current = self.root.as_ref();
+
+        while !q.is_empty() || current.is_some() {
+            while let Some(node) = current {
+                q.push(node);
+                current = node.left.as_ref();
+            }
+
+            if let Some(node) = q.pop() {
+                result.push(node.value);
+                current = node.right.as_ref();
+            }
+        }
+
+        result
+    }
+
+    fn inorder(&self) -> Vec<i32> {
+        if self.root.is_none() {
+            return Vec::new();
+        }
+
+        let mut results: Vec<i32> = Vec::new();
+        if let Some(ref root) = self.root {
+            Tree::traverse_inorder_recursive(
+                &mut results,
+                root,
+            );
+        }
+        results
+    }
+
     fn insert(&mut self, value: i32) {
         // use when using insert_recursive
         // match &mut self.root {
@@ -262,6 +315,44 @@ mod tests {
         assert_eq!(
             tree.traverse_level(),
             vec![8, 3, 10, 1, 6, 14, 4, 7, 13]
+        );
+    }
+
+    #[test]
+    fn works_builds_tree_inorder() {
+        let mut tree = Tree::new();
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(3);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(4);
+        tree.insert(7);
+        tree.insert(14);
+        tree.insert(13);
+
+        assert_eq!(
+            tree.inorder(),
+            vec![1, 3, 4, 6, 7, 8, 10, 13, 14]
+        );
+    }
+
+    #[test]
+    fn works_builds_tree_iterative() {
+        let mut tree = Tree::new();
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(3);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(4);
+        tree.insert(7);
+        tree.insert(14);
+        tree.insert(13);
+
+        assert_eq!(
+            tree.traverse_inorder_iterative(),
+            vec![1, 3, 4, 6, 7, 8, 10, 13, 14]
         );
     }
 }
