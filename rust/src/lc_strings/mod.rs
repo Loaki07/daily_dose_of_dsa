@@ -6,3 +6,6 @@ pub use lc_0242_valid_anagram::*;
 
 pub mod lc_0383_ransom_note;
 pub use lc_0383_ransom_note::*;
+
+pub mod lc_0409_longest_palindrome;
+pub use lc_0409_longest_palindrome::*;
