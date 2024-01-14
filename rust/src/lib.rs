@@ -39,3 +39,6 @@ pub use lc_graphs::*;
 
 pub mod lc_dynamic_programming;
 pub use lc_dynamic_programming::*;
+
+pub mod lc_bit_manipulation;
+pub use lc_bit_manipulation::*;
