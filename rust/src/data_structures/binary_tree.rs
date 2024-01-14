@@ -158,6 +158,20 @@ impl Tree {
         results
     }
 
+    // DFS explores as far as possible along each
+    // branch before backtracking. It dives deep into
+    // the tree structure, visiting children nodes
+    // before visiting sibling nodes. DFS can take
+    // three forms in a binary tree, each differing in
+    // the order they visit the nodes:
+
+    // 1. Pre-order Traversal: Visits the root, then the
+    // left subtree, and finally the right subtree.
+    // 2. In-order Traversal: Visits the left subtree,
+    // then the root, and finally the right subtree.
+    // This is the one we're discussing.
+    // 3. Post-order Traversal: Visits the left subtree,
+    // then the right subtree, and finally the root.
     fn traverse_inorder_recursive(
         values: &mut Vec<i32>,
         node: &Box<Node>,
