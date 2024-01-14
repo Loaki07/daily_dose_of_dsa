@@ -121,6 +121,80 @@ impl From<Node> for Option<Box<Node>> {
     }
 }
 
+#[derive(Debug)]
+pub struct LevelTraversal<'a> {
+    node: Option<&'a Box<Node>>,
+    queue: VecDeque<&'a Box<Node>>,
+}
+
+impl<'a> LevelTraversal<'a> {
+    fn new(node: Option<&'a Box<Node>>) -> Self {
+        Self {
+            node,
+            queue: VecDeque::<&'a Box<Node>>::new(),
+        }
+    }
+}
+
+impl<'a> Iterator for LevelTraversal<'a> {
+    type Item = i32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        match (self.node, &mut self.queue) {
+            (None, q) if q.is_empty() => None,
+            (None, q) => {
+                self.node = q.pop_front();
+                self.next()
+            }
+            (Some(node), q) => {
+                if let Some(ref left) = node.left {
+                    q.push_back(left);
+                }
+                if let Some(ref right) = node.right {
+                    q.push_back(right);
+                }
+                self.node = None;
+                Some(node.value)
+            }
+        }
+    }
+}
+
+#[derive(Debug)]
+pub struct InorderTraversal<'a> {
+    node: Option<&'a Box<Node>>,
+    queue: Vec<&'a Box<Node>>,
+}
+
+impl<'a> InorderTraversal<'a> {
+    fn new(node: Option<&'a Box<Node>>) -> Self {
+        Self {
+            node,
+            queue: Vec::new(),
+        }
+    }
+}
+
+impl<'a> Iterator for InorderTraversal<'a> {
+    type Item = i32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        match (self.node, &mut self.queue) {
+            (None, q) if q.is_empty() => None,
+            (None, q) => {
+                let node = q.pop().unwrap();
+                self.node = node.right.as_ref();
+                Some(node.value)
+            }
+            (Some(node), q) => {
+                q.push(node);
+                self.node = node.left.as_ref();
+                self.next()
+            }
+        }
+    }
+}
+
 impl Tree {
     fn new() -> Self {
         Self { root: None }
@@ -158,6 +232,14 @@ impl Tree {
         results
     }
 
+    fn level_iter(&self) -> LevelTraversal {
+        LevelTraversal::new(self.root.as_ref())
+    }
+
+    fn inorder_iter(&self) -> InorderTraversal {
+        InorderTraversal::new(self.root.as_ref())
+    }
+
     // DFS explores as far as possible along each
     // branch before backtracking. It dives deep into
     // the tree structure, visiting children nodes
@@ -165,12 +247,14 @@ impl Tree {
     // three forms in a binary tree, each differing in
     // the order they visit the nodes:
 
-    // 1. Pre-order Traversal: Visits the root, then the
+    // 1. Pre-order Traversal: Visits the root, then
+    //    the
     // left subtree, and finally the right subtree.
     // 2. In-order Traversal: Visits the left subtree,
     // then the root, and finally the right subtree.
     // This is the one we're discussing.
-    // 3. Post-order Traversal: Visits the left subtree,
+    // 3. Post-order Traversal: Visits the left
+    //    subtree,
     // then the right subtree, and finally the root.
     fn traverse_inorder_recursive(
         values: &mut Vec<i32>,
@@ -329,6 +413,55 @@ mod tests {
         assert_eq!(
             tree.traverse_level(),
             vec![8, 3, 10, 1, 6, 14, 4, 7, 13]
+        );
+    }
+
+    #[test]
+    fn works_builds_level_traversal_iter_tree() {
+        let mut tree = Tree::new();
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(3);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(4);
+        tree.insert(7);
+        tree.insert(14);
+        tree.insert(13);
+
+        for v in tree.level_iter() {
+            // dbg!(&v);
+        }
+
+        let values: Vec<i32> = tree.level_iter().collect();
+        assert_eq!(
+            values,
+            vec![8, 3, 10, 1, 6, 14, 4, 7, 13]
+        );
+    }
+
+    #[test]
+    fn works_builds_inorder_traversal_iter_tree() {
+        let mut tree = Tree::new();
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(3);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(4);
+        tree.insert(7);
+        tree.insert(14);
+        tree.insert(13);
+
+        for v in tree.inorder_iter() {
+            // dbg!(&v);
+        }
+
+        let values: Vec<i32> =
+            tree.inorder_iter().collect();
+        assert_eq!(
+            values,
+            vec![1, 3, 4, 6, 7, 8, 10, 13, 14]
         );
     }
 
