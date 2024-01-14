@@ -1,4 +1,6 @@
+use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+
 struct Solution;
 
 impl Solution {
@@ -30,6 +32,27 @@ impl Solution {
     ) -> bool {
         let mut hm = HashMap::new();
 
+        let mut count = 0;
+        for ch in ransom_note.chars() {
+            *hm.entry(ch).or_insert(0) += 1;
+            count += 1;
+        }
+
+        for ch in magazine.chars() {
+            if let Entry::Occupied(mut e) = hm.entry(ch) {
+                if *e.get() > 0 {
+                    *e.get_mut() -= 1;
+                    count -= 1;
+                    if count == 0 {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        false
+
+        /* Alternate soln
         for ch in magazine.chars() {
             *hm.entry(ch).or_insert(0) += 1;
         }
@@ -43,6 +66,7 @@ impl Solution {
         }
 
         true
+        */
     }
 }
 
