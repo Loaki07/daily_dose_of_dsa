@@ -16,6 +16,11 @@ impl MyQueue {
         }
     }
 
+    // making push the expensive operation
+    // move everything from stack1 to stack 2
+    // push the element to stack1
+    // and then pop everything from stack 2
+    // back to stack 1
     fn push(&mut self, x: i32) {
         while let Some(val) = self.stack1.pop() {
             self.stack2.push(val);
@@ -30,6 +35,7 @@ impl MyQueue {
         self.stack1.pop().unwrap()
     }
 
+    // view the 1st element of the queue
     fn peek(&self) -> i32 {
         self.stack1.last().unwrap().clone()
     }
