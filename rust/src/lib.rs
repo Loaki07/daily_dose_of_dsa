@@ -36,3 +36,6 @@ pub use lc_trees::*;
 
 pub mod lc_graphs;
 pub use lc_graphs::*;
+
+pub mod lc_dynamic_programming;
+pub use lc_dynamic_programming::*;
