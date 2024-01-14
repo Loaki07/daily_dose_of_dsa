@@ -91,6 +91,8 @@
 // node makes binary trees an extremely versatile
 // and widely used data structure.
 
+use std::collections::VecDeque;
+
 #[derive(Debug)]
 pub struct Tree {
     root: Option<Box<Node>>,
@@ -122,6 +124,38 @@ impl From<Node> for Option<Box<Node>> {
 impl Tree {
     fn new() -> Self {
         Self { root: None }
+    }
+
+    // bfs - iterative
+    fn traverse_level(&self) -> Vec<i32> {
+        if self.root.is_none() {
+            return Vec::new();
+        }
+
+        let mut results: Vec<i32> = Vec::new();
+        let mut q: VecDeque<&Box<Node>> = VecDeque::new();
+        let root = self.root.as_ref().unwrap();
+        results.push(root.value);
+        q.push_back(root);
+
+        let mut height = 0;
+        while !q.is_empty() {
+            for _ in 0..q.len() {
+                if let Some(node) = q.pop_front() {
+                    if let Some(ref left) = node.left {
+                        results.push(left.value);
+                        q.push_back(left);
+                    }
+                    if let Some(ref right) = node.right {
+                        results.push(right.value);
+                        q.push_back(right);
+                    }
+                }
+            }
+            height += 1;
+        }
+        // dbg!(&height);
+        results
     }
 
     fn insert(&mut self, value: i32) {
@@ -208,7 +242,26 @@ mod tests {
         tree.insert(6);
         tree.insert(4);
 
-        dbg!(&tree);
+        // dbg!(&tree);
         assert_eq!(tree.root.is_some(), true);
+    }
+
+    #[test]
+    fn works_builds_level_traversal_tree() {
+        let mut tree = Tree::new();
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(3);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(4);
+        tree.insert(7);
+        tree.insert(14);
+        tree.insert(13);
+
+        assert_eq!(
+            tree.traverse_level(),
+            vec![8, 3, 10, 1, 6, 14, 4, 7, 13]
+        );
     }
 }
