@@ -16,6 +16,9 @@ pub use lc_utils::*;
 pub mod lc_arrays;
 pub use lc_arrays::*;
 
+pub mod lc_sliding_window;
+pub use lc_sliding_window::*;
+
 pub mod lc_stacks_queues;
 pub use lc_stacks_queues::*;
 
