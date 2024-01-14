@@ -30,3 +30,6 @@ pub use lc_strings::*;
 
 pub mod lc_math_recursion;
 pub use lc_math_recursion::*;
+
+pub mod lc_trees;
+pub use lc_trees::*;
