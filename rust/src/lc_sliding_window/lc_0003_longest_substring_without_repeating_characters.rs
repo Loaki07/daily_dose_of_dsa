@@ -13,12 +13,14 @@ impl Solution {
         let mut maxlen = 0;
 
         while end < array.len() {
-            while hs.contains(&array[end]) {
-                hs.remove(&array[start]);
+            if !hs.insert(array[end]) {
+                while array[start] != array[end] {
+                    hs.remove(&array[start]);
+                    start += 1;
+                }
                 start += 1;
             }
 
-            hs.insert(array[end]);
             end += 1;
 
             maxlen = maxlen.max(hs.len());
