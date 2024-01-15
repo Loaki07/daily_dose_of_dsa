@@ -37,6 +37,9 @@ pub use lc_math_recursion::*;
 pub mod lc_trees;
 pub use lc_trees::*;
 
+pub mod lc_tries;
+pub use lc_tries::*;
+
 pub mod lc_heap_priority_queue;
 pub use lc_heap_priority_queue::*;
 
