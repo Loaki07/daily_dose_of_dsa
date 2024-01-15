@@ -1,3 +1,6 @@
+pub mod lc_0033_search_in_rotated_sorted_array;
+pub use lc_0033_search_in_rotated_sorted_array::*;
+
 pub mod lc_0035_search_insert_position;
 pub use lc_0035_search_insert_position::*;
 
