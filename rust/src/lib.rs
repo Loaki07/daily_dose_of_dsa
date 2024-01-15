@@ -48,3 +48,6 @@ pub use lc_dynamic_programming::*;
 
 pub mod lc_bit_manipulation;
 pub use lc_bit_manipulation::*;
+
+pub mod lc_intervals;
+pub use lc_intervals::*;
