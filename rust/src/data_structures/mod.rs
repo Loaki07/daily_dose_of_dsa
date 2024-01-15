@@ -6,3 +6,6 @@ pub use doubly_linked_list::*;
 
 pub mod binary_tree;
 pub use binary_tree::*;
+
+pub mod heap;
+pub use heap::*;
