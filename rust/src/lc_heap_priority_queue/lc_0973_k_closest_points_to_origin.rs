@@ -5,6 +5,46 @@ impl Solution {
         points: Vec<Vec<i32>>,
         k: i32,
     ) -> Vec<Vec<i32>> {
+        use std::cmp::Reverse;
+        use std::collections::BinaryHeap;
+
+        let mut min_heap: BinaryHeap<
+            Reverse<(i32, Vec<i32>)>,
+        > = BinaryHeap::new();
+
+        //  point: /[1,3]/ etc
+        for coord in points {
+            let dist = coord[0].pow(2) + coord[1].pow(2);
+            min_heap.push(Reverse((dist, coord)));
+        }
+
+        // minheap: [Reverse((8, [-2, 2])), Reverse((10,
+        // [1, 3]))]
+        let mut res: Vec<Vec<i32>> = Vec::new();
+
+        //  input inside of minheap:
+        //  [Reverse((8, [-2, 2])), Reverse((10, [1, 3]))]
+
+        while let Some(Reverse((_, coord))) = min_heap.pop()
+        {
+            //  output after popping the smallest value:
+            //  [Reverse((10, [1, 3]))]
+
+            //  Insert this into result vec
+            res.push(coord);
+            if res.len() == k as usize {
+                break;
+            }
+        }
+
+        res
+    }
+
+    // iterative approach using sort
+    pub fn _k_closest(
+        points: Vec<Vec<i32>>,
+        k: i32,
+    ) -> Vec<Vec<i32>> {
         let mut dist = points
             .into_iter()
             // .map(|p| {
