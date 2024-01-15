@@ -10,5 +10,8 @@ pub use lc_0169_majority_element::*;
 pub mod lc_0217_contains_duplicate;
 pub use lc_0217_contains_duplicate::*;
 
+pub mod lc_0238_product_of_array_except_self;
+pub use lc_0238_product_of_array_except_self::*;
+
 pub mod lc_0442_find_all_duplicates_in_an_array;
 pub use lc_0442_find_all_duplicates_in_an_array::*;
