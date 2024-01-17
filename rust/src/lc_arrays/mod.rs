@@ -16,5 +16,8 @@ pub use lc_0217_contains_duplicate::*;
 pub mod lc_0238_product_of_array_except_self;
 pub use lc_0238_product_of_array_except_self::*;
 
+pub mod lc_0347_top_k_frequent_elements;
+pub use lc_0347_top_k_frequent_elements::*;
+
 pub mod lc_0442_find_all_duplicates_in_an_array;
 pub use lc_0442_find_all_duplicates_in_an_array::*;
