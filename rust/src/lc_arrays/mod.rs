@@ -1,6 +1,9 @@
 pub mod lc_0001_two_sum;
 pub use lc_0001_two_sum::*;
 
+pub mod lc_0049_group_anagrams;
+pub use lc_0049_group_anagrams::*;
+
 pub mod lc_0075_sort_colors;
 pub use lc_0075_sort_colors::*;
 
