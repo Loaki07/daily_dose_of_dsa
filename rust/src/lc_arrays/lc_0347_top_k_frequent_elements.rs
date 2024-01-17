@@ -1,4 +1,5 @@
 // Soln using binary heap
+// O(k log n) complexity
 pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
     use std::collections::{BinaryHeap, HashMap};
 
