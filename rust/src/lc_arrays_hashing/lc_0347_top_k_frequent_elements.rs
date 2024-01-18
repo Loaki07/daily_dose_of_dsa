@@ -45,7 +45,7 @@ pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         _ => quick_select(&mut count_vec, k),
     };
 
-    res.into_iter().map(|(num, count)| *num).collect()
+    res.into_iter().map(|(num, _count)| *num).collect()
 }
 
 pub fn top_k_frequent_built_in_quick_select(
@@ -67,13 +67,13 @@ pub fn top_k_frequent_built_in_quick_select(
 
     count_vec.select_nth_unstable_by_key(
         len - k as usize,
-        |(num, count)| *count,
+        |(_num, count)| *count,
     );
     count_vec
         .into_iter()
         .rev()
         .take(k as usize)
-        .map(|(num, count)| *num)
+        .map(|(num, _count)| *num)
         .collect::<Vec<i32>>()
 }
 
