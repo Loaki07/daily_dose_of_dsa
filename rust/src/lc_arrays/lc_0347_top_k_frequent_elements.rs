@@ -1,6 +1,73 @@
+// Time Complexity:
+
+// HashMap Creation: O(N), where N is the length
+// of nums. Each insertion or update operation in
+// the hash map is O(1), and you do this for every
+// element. Vector Creation from HashMap: O(N).
+// Converting a hash map into a vector.
+// Quick Select (select_nth_unstable_by_key): The
+// average time complexity is O(N), but the
+// worst-case is O(N²). However, the worst-case is
+// rare. Iterating and Collecting Results: O(K),
+// where K is the number of top frequent elements
+// you are selecting. Overall, the average time
+// complexity is O(N), but the worst-case could go
+// up to O(N²) due to the quick select step.
+
+// Space Complexity:
+
+// O(N) for the HashMap.
+// O(N) for the vector created from HashMap.
+// No additional significant space is used.
+// So, the total space complexity is O(N).
+// built in rust quick select function
+// using quick select, we should ideally be able
+// to get O(n) time complexity
+pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
+    use std::collections::HashMap;
+
+    let mut hm = HashMap::new();
+
+    for val in nums.iter() {
+        hm.entry(val)
+            .and_modify(|count| *count += 1)
+            .or_insert(1);
+    }
+
+    let mut count_vec = hm.into_iter().collect::<Vec<_>>();
+    let len = count_vec.len();
+
+    count_vec.select_nth_unstable_by_key(
+        len - k as usize,
+        |(num, count)| *count,
+    );
+    count_vec
+        .into_iter()
+        .rev()
+        .take(k as usize)
+        .map(|(num, count)| *num)
+        .collect::<Vec<i32>>()
+}
+
+// Time Complexity:
+
+// HashMap Creation: O(N), same as above.
+// Creating Binary Heap: O(N log N). Inserting N
+// elements into a binary heap costs O(log N)
+// each. Sorting the Binary Heap: O(N log N). The
+// into_sorted_vec function sorts the heap.
+// Iterating and Collecting Results: O(K), similar
+// to the first method. The total time complexity
+// is O(N log N) due to the heap operations.
+
+// Space Complexity:
+
+// O(N) for the HashMap.
+// O(N) for the Binary Heap.
+// So, the total space complexity is also O(N).
 // Soln using binary heap
 // O(k log n) complexity
-pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
+pub fn _top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
     use std::collections::{BinaryHeap, HashMap};
 
     let mut hm: HashMap<i32, usize> = HashMap::new();
