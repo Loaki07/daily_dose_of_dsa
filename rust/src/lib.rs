@@ -13,8 +13,8 @@ pub use general::*;
 pub mod lc_utils;
 pub use lc_utils::*;
 
-pub mod lc_arrays;
-pub use lc_arrays::*;
+pub mod lc_arrays_hashing;
+pub use lc_arrays_hashing::*;
 
 pub mod lc_sliding_window;
 pub use lc_sliding_window::*;
