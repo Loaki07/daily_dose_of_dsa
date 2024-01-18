@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 // Time Complexity:
 
 // HashMap Creation: O(N), where N is the length
@@ -23,7 +25,33 @@
 // built in rust quick select function
 // using quick select, we should ideally be able
 // to get O(n) time complexity
+
 pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
+    use std::collections::HashMap;
+
+    let mut hm = HashMap::new();
+
+    for val in nums.iter() {
+        hm.entry(*val)
+            .and_modify(|count| *count += 1)
+            .or_insert(1);
+    }
+
+    let mut count_vec =
+        hm.into_iter().collect::<Vec<(i32, i32)>>();
+
+    let res = match (k as usize).cmp(&count_vec.len()) {
+        Ordering::Equal => &count_vec,
+        _ => quick_select(&mut count_vec, k),
+    };
+
+    res.into_iter().map(|(num, count)| *num).collect()
+}
+
+pub fn top_k_frequent_built_in_quick_select(
+    nums: Vec<i32>,
+    k: i32,
+) -> Vec<i32> {
     use std::collections::HashMap;
 
     let mut hm = HashMap::new();
@@ -87,6 +115,37 @@ pub fn _top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         .take(k as usize)
         .map(|(_, num)| num)
         .collect::<Vec<i32>>()
+}
+
+pub fn quick_select(
+    // (num, count)
+    slice: &mut [(i32, i32)],
+    k: i32,
+) -> &[(i32, i32)] {
+    let (mut pivot, mut i, mut j) = (0, 1, 1);
+
+    for index in 1..slice.len() {
+        if slice[index].1 >= slice[pivot].1 {
+            slice.swap(index, j);
+        } else {
+            slice.swap(index, i);
+            i += 1;
+        }
+        j += 1;
+    }
+
+    slice.swap(pivot, i - 1);
+    pivot = i - 1;
+
+    let larger_items = (j - pivot) as i32;
+
+    match larger_items.cmp(&k) {
+        Ordering::Less => quick_select(&mut slice[0..j], k),
+        Ordering::Greater => {
+            quick_select(&mut slice[pivot + 1..j], k)
+        }
+        Ordering::Equal => &slice[pivot..j],
+    }
 }
 
 #[cfg(test)]
