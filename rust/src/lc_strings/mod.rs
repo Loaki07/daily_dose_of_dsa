@@ -1,3 +1,6 @@
+pub mod lc_0058_length_of_last_word;
+pub use lc_0058_length_of_last_word::*;
+
 pub mod lc_0125_valid_palindrome;
 pub use lc_0125_valid_palindrome::*;
 
