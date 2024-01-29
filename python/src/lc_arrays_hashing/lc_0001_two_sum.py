@@ -18,20 +18,15 @@ def _two_sum(nums, target):
 
 # Tests
 def test_ex1():
-    result = two_sum(
-        [2, 7, 11, 15], 9)
-    assert result == [
-        0, 1] or result == [1, 0]
+    result = two_sum([2, 7, 11, 15], 9)
+    assert result == [0, 1] or result == [1, 0]
 
 
 def test_ex2():
-    res = two_sum(
-        [3, 2, 4], 6)
-    assert res == [
-        1, 2] or res == [2, 1]
+    res = two_sum([3, 2, 4], 6)
+    assert res == [1, 2] or res == [2, 1]
 
 
 def test_ex3():
     res = two_sum([3, 3], 6)
-    assert res == [
-        0, 1] or res == [1, 0]
+    assert res == [0, 1] or res == [1, 0]
