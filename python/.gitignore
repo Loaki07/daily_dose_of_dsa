@@ -74,3 +74,5 @@ Thumbs.db       # Windows
 
 # Custom
 # Add any additional files/folders you want to ignore specific to your project
+
+poetry.lock

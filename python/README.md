@@ -41,3 +41,12 @@ pytest src/hello_world.py
 # clean all the cache
 python clean_python_cache.py
 ```
+
+## Format
+
+```bash
+# format entire python project
+black .
+
+poetry run autopep8 --max-line-length=30 --in-place --recursive . --verbose
+```
