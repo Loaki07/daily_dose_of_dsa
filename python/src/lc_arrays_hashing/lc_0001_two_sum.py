@@ -1,4 +1,7 @@
-def two_sum(nums, target):
+from typing import List
+
+
+def two_sum(nums: List[int], target: int) -> List[int]:
     checked_elements = {}
     for i, v in enumerate(nums):
         needed_v = target - v
