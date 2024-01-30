@@ -1,6 +1,29 @@
 from typing import List
 
 
+# O(n log (n)) time
+# O(1) space
+# works only for a sorted array
+def two_sum_for_sorted_array(
+    nums: List[int], target: int
+) -> List[int]:
+    nums.sort()
+    left = 0
+    right = len(nums) - 1
+
+    while left < right:
+        current_sum = nums[left] + nums[right]
+
+        if current_sum == target:
+            return [left, right]
+        elif current_sum < target:
+            left += 1
+        elif current_sum > target:
+            right -= 1
+
+    return []
+
+
 # O(n) time
 # O(n) space
 def two_sum(nums: List[int], target: int) -> List[int]:
