@@ -1,6 +1,30 @@
 use std::collections::HashMap;
 
+// O(n) time
+// O(n) space
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    let mut hm: HashMap<i32, i32> =
+        HashMap::with_capacity(nums.len());
+
+    for (i, v) in nums.iter().enumerate() {
+        let needed_v = target - v;
+
+        match hm.get(&needed_v) {
+            Some(&val) => return vec![i as i32, val],
+            None => {
+                hm.insert(*v, i as i32);
+            }
+        }
+    }
+    vec![]
+}
+
+// O(n) time
+// O(n) space
+pub fn two_sum_map_1(
+    nums: Vec<i32>,
+    target: i32,
+) -> Vec<i32> {
     let mut checked_elements: HashMap<i32, i32> =
         HashMap::with_capacity(nums.len());
     for (i, v) in nums.iter().enumerate() {
@@ -16,6 +40,8 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     vec![]
 }
 
+// O(n^2) time
+// O(1) space
 pub fn _two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     for i in 0..nums.len() {
         for j in (i + 1)..nums.len() {
