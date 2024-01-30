@@ -1,6 +1,8 @@
 from typing import List
 
 
+# O(n) time
+# O(n) space
 def two_sum(nums: List[int], target: int) -> List[int]:
     checked_elements = {}
     for i, v in enumerate(nums):
@@ -11,6 +13,8 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     return []
 
 
+# O(n^2) time
+# O(1) space
 def _two_sum(nums, target):
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
