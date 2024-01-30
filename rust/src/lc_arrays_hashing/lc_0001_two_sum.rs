@@ -1,4 +1,35 @@
-use std::collections::HashMap;
+use std::{cmp::Ordering, collections::HashMap};
+
+// O(n log (n)) time
+// O(1) space
+// works only for a sorted array
+// pub fn two_sum_for_sorted_array(
+pub fn two_sum_for_sorted_array(
+    mut nums: Vec<i32>,
+    target: i32,
+) -> Vec<i32> {
+    nums.sort();
+    let mut left = 0;
+    let mut right = nums.len() - 1;
+
+    while left < right {
+        let current_sum = nums[left] + nums[right];
+
+        match current_sum.cmp(&target) {
+            Ordering::Equal => {
+                return vec![left as i32, right as i32]
+            }
+            Ordering::Less => {
+                left += 1;
+            }
+            Ordering::Greater => {
+                right -= 1;
+            }
+        }
+    }
+
+    vec![]
+}
 
 // O(n) time
 // O(n) space
