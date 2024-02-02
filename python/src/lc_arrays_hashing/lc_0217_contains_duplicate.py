@@ -1,5 +1,6 @@
 from typing import List
 
+
 # O(n) time
 # O(n) space
 def contains_duplicate(nums: List[int]) -> bool:
@@ -11,7 +12,8 @@ def contains_duplicate(nums: List[int]) -> bool:
         hashset.add(n)
     return False
 
-#Tests
+
+# Tests
 def test_ex1():
     result = contains_duplicate([1, 2, 3, 1])
     assert result == True
