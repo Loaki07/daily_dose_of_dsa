@@ -1,6 +1,9 @@
 pub mod bubble_sort;
 pub use bubble_sort::*;
 
+pub mod insertion_sort;
+pub use insertion_sort::*;
+
 pub mod merge_sort;
 pub use merge_sort::*;
 
