@@ -1,6 +1,8 @@
 /// Sorts a mutable slice using in-place insertion
 /// sort algorith.
 
+// O(n^2) time
+// O(1) space
 pub fn insertion_sort<T: Ord + Copy>(arr: &mut [T]) {
     for i in 1..arr.len() {
         let mut j = i;
