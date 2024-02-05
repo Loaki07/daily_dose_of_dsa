@@ -4,6 +4,9 @@ pub use bubble_sort::*;
 pub mod insertion_sort;
 pub use insertion_sort::*;
 
+pub mod selection_sort;
+pub use selection_sort::*;
+
 pub mod merge_sort;
 pub use merge_sort::*;
 
