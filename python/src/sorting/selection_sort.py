@@ -1,6 +1,8 @@
 from typing import Any, List
 
 
+# O(n^2) time
+# O(1) space
 def selection_sort(array: List[Any]) -> List[Any]:
     current_idx = 0
 
