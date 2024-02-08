@@ -15,6 +15,9 @@ def heap_sort(array: List[Any]):
 def build_max_heap(array: List[Any]):
     first_parent_idx = (len(array) - 1) // 2
     for current_idx in reversed(
+        # we do + 1 here so that we need
+        # to include the first_parent_idx
+        # in python range is exclusive by defaualt
         range(first_parent_idx + 1)
     ):
         sift_down(current_idx, len(array) - 1, array)
