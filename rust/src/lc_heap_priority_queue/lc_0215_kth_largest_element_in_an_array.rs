@@ -1,3 +1,5 @@
+use core::num;
+
 pub fn partition(
     list: &mut [i32],
     left: usize,
@@ -47,7 +49,7 @@ pub fn find_kth_largest_1(nums: Vec<i32>, k: i32) -> i32 {
 
 // using built in BinaryHeap
 // construct a min Heap
-pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
+pub fn find_kth_largest_2(nums: Vec<i32>, k: i32) -> i32 {
     use std::cmp::Reverse;
     use std::collections::BinaryHeap;
 
@@ -73,6 +75,65 @@ pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
     // from Option, access the actual value from
     // Reverse via .0
     max_heap.peek().unwrap().0
+}
+
+pub fn heap_sort<T: Ord>(arr: &mut [T]) {
+    if arr.len() <= 1 {
+        return;
+    }
+
+    // build a max heap
+    heapify(arr);
+
+    for end in (1..arr.len()).rev() {
+        arr.swap(0, end);
+        move_down(&mut arr[..end], 0);
+    }
+}
+
+// Convert `arr` into a max heap
+fn heapify<T: Ord>(arr: &mut [T]) {
+    let last_parent = (arr.len() - 1) / 2;
+    for i in (0..=last_parent).rev() {
+        move_down(arr, i);
+    }
+}
+
+// Move the element at `root` down until `arr` is
+// a max heap again.
+//
+// this assumes that the subtrees under `root` are
+// valid max heaps already.
+fn move_down<T: Ord>(arr: &mut [T], mut root: usize) {
+    let last = arr.len() - 1;
+
+    loop {
+        let left = 2 * root + 1;
+        if left > last {
+            break;
+        }
+
+        let right = left + 1;
+
+        let max = if right <= last && arr[right] > arr[left]
+        {
+            right
+        } else {
+            left
+        };
+
+        if arr[max] > arr[root] {
+            arr.swap(root, max);
+        }
+        root = max;
+    }
+}
+
+// using heap sort
+pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
+    let mut nums = nums;
+    heap_sort(&mut nums);
+    nums[nums.len() - k as usize]
 }
 
 #[cfg(test)]
