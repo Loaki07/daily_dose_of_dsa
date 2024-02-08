@@ -3,6 +3,42 @@ from typing import Any, List
 
 # O(n) time
 # O(1) space
+# 1 pass method
+def three_number_sort_3(
+    array: List[Any], order: List[Any]
+) -> List[Any]:
+    first_value = order[0]
+    second_value = order[1]
+
+    # keep track of the indicies where the values are stored
+    first_idx, second_idx, third_idx = 0, 0, len(array) - 1
+
+    while second_idx <= third_idx:
+        value = array[second_idx]
+
+        if value == first_value:
+            array[second_idx], array[first_idx] = (
+                array[first_idx],
+                array[second_idx],
+            )
+            first_idx += 1
+            second_idx += 1
+
+        elif value == second_value:
+            second_idx += 1
+
+        else:
+            array[second_idx], array[third_idx] = (
+                array[third_idx],
+                array[second_idx],
+            )
+            third_idx -= 1
+
+    return array
+
+
+# O(n) time
+# O(1) space
 # 2 pass method
 def three_number_sort_2(
     array: List[Any], order: List[Any]
@@ -65,6 +101,13 @@ def test_three_number_sort_1():
 
 def test_three_number_sort_2():
     result = three_number_sort_2(
+        [1, 0, 0, -1, -1, 0, 1, 1], [0, 1, -1]
+    )
+    assert result == [0, 0, 0, 1, 1, 1, -1, -1]
+
+
+def test_three_number_sort_3():
+    result = three_number_sort_3(
         [1, 0, 0, -1, -1, 0, 1, 1], [0, 1, -1]
     )
     assert result == [0, 0, 0, 1, 1, 1, -1, -1]
