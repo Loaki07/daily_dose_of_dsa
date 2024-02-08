@@ -4,6 +4,8 @@ from src.sorting import (
     bubble_sort,
     insertion_sort,
     selection_sort,
+    three_number_sort,
+    quick_sort,
 )
 from src.lc_arrays_hashing.lc_0217_contains_duplicate import (
     contains_duplicate,
@@ -21,4 +23,6 @@ __all__ = [
     "bubble_sort",
     "insertion_sort",
     "selection_sort",
+    "three_number_sort",
+    "quick_sort",
 ]
