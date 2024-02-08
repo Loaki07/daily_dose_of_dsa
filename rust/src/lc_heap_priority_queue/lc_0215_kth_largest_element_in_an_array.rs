@@ -38,10 +38,41 @@ pub fn quick_select(
     }
 }
 
-pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
+// using quick select algo
+pub fn find_kth_largest_1(nums: Vec<i32>, k: i32) -> i32 {
     let mut nums = nums;
     let len = nums.len();
     quick_select(&mut nums, 0, len - 1, len - k as usize)
+}
+
+// using built in BinaryHeap
+// construct a min Heap
+pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
+    use std::cmp::Reverse;
+    use std::collections::BinaryHeap;
+
+    let capacity = k as usize;
+
+    // preallocate memory for the capacity k+1, so it
+    // doesn't need to be reallocated while function
+    // is called
+    let mut max_heap: BinaryHeap<Reverse<i32>> =
+        BinaryHeap::with_capacity(capacity + 1);
+
+    for num in nums {
+        // Reverse is used because we need a MinHeap,
+        // instead of a default behavior
+        max_heap.push(Reverse(num));
+
+        if max_heap.len() > capacity {
+            max_heap.pop();
+        }
+    }
+
+    // peek the top of the heap, unwrap Reversed value
+    // from Option, access the actual value from
+    // Reverse via .0
+    max_heap.peek().unwrap().0
 }
 
 #[cfg(test)]
