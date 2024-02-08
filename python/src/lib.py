@@ -6,6 +6,7 @@ from src.sorting import (
     selection_sort,
     three_number_sort,
     quick_sort,
+    heap_sort,
 )
 from src.lc_arrays_hashing.lc_0217_contains_duplicate import (
     contains_duplicate,
@@ -25,4 +26,5 @@ __all__ = [
     "selection_sort",
     "three_number_sort",
     "quick_sort",
+    "heap_sort",
 ]

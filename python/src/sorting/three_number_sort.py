@@ -4,7 +4,7 @@ from typing import Any, List
 # O(n) time
 # O(1) space
 # 1 pass method
-def three_number_sort_3(
+def three_number_sort(
     array: List[Any], order: List[Any]
 ) -> List[Any]:
     first_value = order[0]
@@ -106,8 +106,8 @@ def test_three_number_sort_2():
     assert result == [0, 0, 0, 1, 1, 1, -1, -1]
 
 
-def test_three_number_sort_3():
-    result = three_number_sort_3(
+def test_three_number_sort():
+    result = three_number_sort(
         [1, 0, 0, -1, -1, 0, 1, 1], [0, 1, -1]
     )
     assert result == [0, 0, 0, 1, 1, 1, -1, -1]
