@@ -11,6 +11,7 @@ from src.sorting import (
 from src.lc_arrays_hashing.lc_0217_contains_duplicate import (
     contains_duplicate,
 )
+from src.strings import common_characters
 
 
 # Now, you can expose these imported items with __all__
@@ -27,4 +28,5 @@ __all__ = [
     "three_number_sort",
     "quick_sort",
     "heap_sort",
+    "common_characters",
 ]
