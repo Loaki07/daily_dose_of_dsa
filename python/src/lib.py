@@ -18,6 +18,9 @@ from src.recursion import (
     nth_fibonacci,
     product_sum,
 )
+from src.binary_serach_tree import (
+    find_closest_value_in_bst,
+)
 from src.graphs import (
     depth_first_search,
     breadth_first_search,
@@ -43,4 +46,5 @@ __all__ = [
     "product_sum",
     "depth_first_search",
     "breadth_first_search",
+    "find_closest_value_in_bst",
 ]
