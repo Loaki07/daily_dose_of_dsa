@@ -1,5 +1,3 @@
-use crate::Node;
-
 #[derive(Debug, PartialEq)]
 pub struct BST {
     value: i32,
