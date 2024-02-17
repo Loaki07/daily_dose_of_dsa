@@ -11,10 +11,15 @@ from src.sorting import (
 from src.lc_arrays_hashing.lc_0217_contains_duplicate import (
     contains_duplicate,
 )
-from src.strings import common_characters
+from src.strings import (
+    common_characters,
+)
 from src.recursion import (
     nth_fibonacci,
     product_sum,
+)
+from src.graphs import (
+    depth_first_search,
 )
 
 
@@ -35,4 +40,5 @@ __all__ = [
     "common_characters",
     "nth_fibonacci",
     "product_sum",
+    "depth_first_search",
 ]
