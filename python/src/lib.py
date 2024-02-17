@@ -20,6 +20,7 @@ from src.recursion import (
 )
 from src.graphs import (
     depth_first_search,
+    breadth_first_search,
 )
 
 
@@ -41,4 +42,5 @@ __all__ = [
     "nth_fibonacci",
     "product_sum",
     "depth_first_search",
+    "breadth_first_search",
 ]
