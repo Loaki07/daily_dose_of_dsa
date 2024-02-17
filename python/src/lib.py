@@ -12,7 +12,10 @@ from src.lc_arrays_hashing.lc_0217_contains_duplicate import (
     contains_duplicate,
 )
 from src.strings import common_characters
-from src.recursion import nth_fibonacci
+from src.recursion import (
+    nth_fibonacci,
+    product_sum,
+)
 
 
 # Now, you can expose these imported items with __all__
@@ -31,4 +34,5 @@ __all__ = [
     "heap_sort",
     "common_characters",
     "nth_fibonacci",
+    "product_sum",
 ]
