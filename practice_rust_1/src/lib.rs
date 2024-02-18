@@ -9,3 +9,6 @@ pub use lc_strings::*;
 
 pub mod lc_trees;
 pub use lc_trees::*;
+
+pub mod famous_algorithms;
+pub use famous_algorithms::*;
