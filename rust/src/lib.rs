@@ -28,6 +28,9 @@ pub use lc_utils::*;
 pub mod lc_arrays_hashing;
 pub use lc_arrays_hashing::*;
 
+pub mod lc_two_pointers;
+pub use lc_two_pointers::*;
+
 pub mod lc_sliding_window;
 pub use lc_sliding_window::*;
 
