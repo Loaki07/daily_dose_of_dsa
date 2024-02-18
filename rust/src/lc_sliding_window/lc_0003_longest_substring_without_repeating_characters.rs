@@ -1,7 +1,27 @@
 pub struct Solution;
 
 impl Solution {
+    // sliding window
+    // O(n) time | O(n) space
     pub fn length_of_longest_substring(s: String) -> i32 {
+        use std::collections::VecDeque;
+
+        let mut set: VecDeque<char> = VecDeque::new();
+        let mut longest = 0;
+
+        for c in s.chars() {
+            while set.contains(&c) {
+                set.pop_front();
+            }
+
+            set.push_back(c);
+            longest = longest.max(set.len());
+        }
+
+        longest as i32
+    }
+
+    pub fn _length_of_longest_substring(s: String) -> i32 {
         use std::collections::HashSet;
 
         let array = s.chars().collect::<Vec<char>>();
