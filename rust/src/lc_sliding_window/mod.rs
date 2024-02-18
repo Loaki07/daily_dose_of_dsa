@@ -6,3 +6,6 @@ pub use lc_0053_maximum_subarray::*;
 
 pub mod lc_0121_best_time_to_buy_and_sell_stock;
 pub use lc_0121_best_time_to_buy_and_sell_stock::*;
+
+pub mod lc_0424_longest_repeating_character_replacement;
+pub use lc_0424_longest_repeating_character_replacement::*;
