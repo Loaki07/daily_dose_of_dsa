@@ -13,6 +13,9 @@ pub use lc_0049_group_anagrams::*;
 pub mod lc_0075_sort_colors;
 pub use lc_0075_sort_colors::*;
 
+pub mod lc_0128_longest_consecutive_sequence;
+pub use lc_0128_longest_consecutive_sequence::*;
+
 pub mod lc_0169_majority_element;
 pub use lc_0169_majority_element::*;
 
