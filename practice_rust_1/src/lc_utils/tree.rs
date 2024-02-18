@@ -39,7 +39,9 @@ impl TreeNode {
 
     fn fill(&mut self, vals: &[i32], index: usize) {
         let left_node = index * 2 + 1;
-        if left_node < vals.len() {
+        if left_node < vals.len()
+            && vals[left_node] != i32::MIN
+        {
             self.left = Some(Rc::new(RefCell::new(
                 Self::new(vals[left_node]),
             )));
@@ -51,7 +53,9 @@ impl TreeNode {
         }
 
         let right_node = left_node + 1;
-        if right_node < vals.len() {
+        if right_node < vals.len()
+            && vals[right_node] != i32::MIN
+        {
             self.right = Some(Rc::new(RefCell::new(
                 Self::new(vals[right_node]),
             )));
@@ -99,5 +103,24 @@ mod test {
             TreeNode::from_vec(&[4, 2, 7, 1, 3, 6, 9]);
         let result = tree.unwrap().borrow().into_array();
         assert_eq!(result, vec![1, 2, 3, 4, 6, 7, 9]);
+    }
+
+    #[test]
+    fn null_entry_tree() {
+        let tree = TreeNode::from_vec(&[
+            6,
+            2,
+            8,
+            0,
+            4,
+            7,
+            9,
+            i32::MIN,
+            i32::MIN,
+            3,
+            5,
+        ]);
+        let result = tree.unwrap().borrow().into_array();
+        assert_eq!(result, vec![0, 2, 3, 4, 5, 6, 7, 8, 9]);
     }
 }
