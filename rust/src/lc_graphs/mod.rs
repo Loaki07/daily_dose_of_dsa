@@ -1,3 +1,6 @@
+pub mod lc_0200_number_of_islands;
+pub use lc_0200_number_of_islands::*;
+
 pub mod lc_0207_course_schedule;
 pub use lc_0207_course_schedule::*;
 
