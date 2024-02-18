@@ -1,6 +1,9 @@
 pub mod lc_0098_validate_binary_search_tree;
 pub use lc_0098_validate_binary_search_tree::*;
 
+pub mod lc_0102_binary_tree_level_order_traversal;
+pub use lc_0102_binary_tree_level_order_traversal::*;
+
 pub mod lc_0104_maximum_depth_of_binary_tree;
 pub use lc_0104_maximum_depth_of_binary_tree::*;
 
