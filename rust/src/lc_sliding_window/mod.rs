@@ -9,3 +9,6 @@ pub use lc_0121_best_time_to_buy_and_sell_stock::*;
 
 pub mod lc_0424_longest_repeating_character_replacement;
 pub use lc_0424_longest_repeating_character_replacement::*;
+
+pub mod lc_0567_permutaton_in_string;
+pub use lc_0567_permutaton_in_string::*;
