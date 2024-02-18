@@ -24,6 +24,9 @@ from src.binary_serach_tree import (
     validate_bst,
     bst_traversal,
 )
+from src.binary_tree import (
+    binary_tree_diameter,
+)
 from src.graphs import (
     depth_first_search,
     breadth_first_search,
@@ -53,4 +56,5 @@ __all__ = [
     "bst_construction",
     "validate_bst",
     "bst_traversal",
+    "binary_tree_diameter",
 ]
