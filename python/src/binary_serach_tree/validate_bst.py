@@ -1,5 +1,6 @@
 from src.binary_serach_tree.bst_construction import BST
 
+
 # O(n) time | O(d) space
 def validate_bst(tree):
     return validate_bst_helper(

@@ -22,6 +22,7 @@ from src.binary_serach_tree import (
     find_closest_value_in_bst,
     bst_construction,
     validate_bst,
+    bst_traversal,
 )
 from src.graphs import (
     depth_first_search,
@@ -51,4 +52,5 @@ __all__ = [
     "find_closest_value_in_bst",
     "bst_construction",
     "validate_bst",
+    "bst_traversal",
 ]
