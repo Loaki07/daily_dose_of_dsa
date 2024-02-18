@@ -20,6 +20,7 @@ from src.recursion import (
 )
 from src.binary_serach_tree import (
     find_closest_value_in_bst,
+    bst_construction,
 )
 from src.graphs import (
     depth_first_search,
@@ -47,4 +48,5 @@ __all__ = [
     "depth_first_search",
     "breadth_first_search",
     "find_closest_value_in_bst",
+    "bst_construction",
 ]
