@@ -19,6 +19,9 @@ pub use rescursion::*;
 pub mod graphs;
 pub use graphs::*;
 
+pub mod famous_algorithms;
+pub use famous_algorithms::*;
+
 pub mod lc_utils;
 pub use lc_utils::*;
 
