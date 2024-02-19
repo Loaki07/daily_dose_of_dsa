@@ -3,7 +3,22 @@ use crate::ListNode;
 pub struct Solution;
 
 impl Solution {
+    // two pointer method
+    // remember we need to store node.next during
+    // reversal first
     pub fn reverse_list(
+        head: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
+        let (mut prev, mut curr) = (None, head);
+        while let Some(mut node) = curr {
+            curr = node.next;
+            node.next = prev;
+            prev = Some(node);
+        }
+        prev
+    }
+
+    pub fn _reverse_list(
         mut head: Option<Box<ListNode>>,
     ) -> Option<Box<ListNode>> {
         let mut arr = vec![];
