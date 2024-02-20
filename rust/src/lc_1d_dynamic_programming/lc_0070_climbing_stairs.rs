@@ -2,6 +2,18 @@ pub struct Solution;
 
 impl Solution {
     pub fn climb_stairs(n: i32) -> i32 {
+        use std::iter::successors;
+
+        successors(Some((0, 1)), |dp| {
+            Some((dp.1, dp.0 + dp.1))
+        })
+        .take((n + 1) as usize)
+        .last()
+        .unwrap()
+        .1
+    }
+
+    pub fn _climb_stairs(n: i32) -> i32 {
         // iterative fib soln
         // dp -> store each result
         let mut fib = vec![1, 1];

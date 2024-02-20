@@ -61,8 +61,8 @@ pub use lc_heap_priority_queue::*;
 pub mod lc_graphs;
 pub use lc_graphs::*;
 
-pub mod lc_dynamic_programming;
-pub use lc_dynamic_programming::*;
+pub mod lc_1d_dynamic_programming;
+pub use lc_1d_dynamic_programming::*;
 
 pub mod lc_bit_manipulation;
 pub use lc_bit_manipulation::*;
