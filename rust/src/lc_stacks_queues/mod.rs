@@ -1,6 +1,9 @@
 pub mod lc_0020_valid_parentheses;
 pub use lc_0020_valid_parentheses::*;
 
+pub mod lc_0022_generate_parentheses;
+pub use lc_0022_generate_parentheses::*;
+
 pub mod lc_0150_evaluate_reverse_polish_notation;
 pub use lc_0150_evaluate_reverse_polish_notation::*;
 
