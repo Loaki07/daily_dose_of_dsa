@@ -1,3 +1,6 @@
+pub mod lc_0011_container_with_most_water;
+pub use lc_0011_container_with_most_water::*;
+
 pub mod lc_0015_3sum;
 pub use lc_0015_3sum::*;
 
