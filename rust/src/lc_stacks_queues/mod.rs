@@ -12,3 +12,6 @@ pub use lc_0155_min_stack::*;
 
 pub mod lc_0232_implement_queue_using_stacks;
 pub use lc_0232_implement_queue_using_stacks::*;
+
+pub mod lc_0739_daily_temperatures;
+pub use lc_0739_daily_temperatures::*;
