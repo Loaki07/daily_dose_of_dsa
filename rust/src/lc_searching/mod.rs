@@ -1,3 +1,6 @@
+pub mod lc_0004_median_of_two_sorted_arrays;
+pub use lc_0004_median_of_two_sorted_arrays::*;
+
 pub mod lc_0033_search_in_rotated_sorted_array;
 pub use lc_0033_search_in_rotated_sorted_array::*;
 
