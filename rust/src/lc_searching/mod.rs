@@ -18,3 +18,6 @@ pub use lc_0704_binary_search::*;
 
 pub mod lc_0875_koko_eating_bananas;
 pub use lc_0875_koko_eating_bananas::*;
+
+pub mod lc_0981_time_based_key_value_store;
+pub use lc_0981_time_based_key_value_store::*;
