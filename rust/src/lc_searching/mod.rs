@@ -12,3 +12,6 @@ pub use lc_0278_first_bad_version::*;
 
 pub mod lc_0704_binary_search;
 pub use lc_0704_binary_search::*;
+
+pub mod lc_0875_koko_eating_bananas;
+pub use lc_0875_koko_eating_bananas::*;
