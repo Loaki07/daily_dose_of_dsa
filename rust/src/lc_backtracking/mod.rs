@@ -10,5 +10,8 @@ pub use lc_0046_permutations::*;
 pub mod lc_0078_subsets;
 pub use lc_0078_subsets::*;
 
+pub mod lc_0079_word_search;
+pub use lc_0079_word_search::*;
+
 pub mod lc_0090_subsets_2;
 pub use lc_0090_subsets_2::*;
