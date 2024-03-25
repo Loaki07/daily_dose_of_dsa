@@ -1,3 +1,6 @@
+pub mod lc_0017_letter_combinations_of_a_phone_number;
+pub use lc_0017_letter_combinations_of_a_phone_number::*;
+
 pub mod lc_0039_combination_sum;
 pub use lc_0039_combination_sum::*;
 
