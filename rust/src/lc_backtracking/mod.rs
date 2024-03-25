@@ -15,3 +15,6 @@ pub use lc_0079_word_search::*;
 
 pub mod lc_0090_subsets_2;
 pub use lc_0090_subsets_2::*;
+
+pub mod lc_0131_palindrome_partitioning;
+pub use lc_0131_palindrome_partitioning::*;
