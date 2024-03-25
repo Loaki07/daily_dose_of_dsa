@@ -58,6 +58,9 @@ pub use lc_tries::*;
 pub mod lc_heap_priority_queue;
 pub use lc_heap_priority_queue::*;
 
+pub mod lc_backtracking;
+pub use lc_backtracking::*;
+
 pub mod lc_graphs;
 pub use lc_graphs::*;
 
