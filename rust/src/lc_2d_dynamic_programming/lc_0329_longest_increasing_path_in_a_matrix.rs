@@ -73,7 +73,7 @@ impl Solution {
 //             vec![2, 1, 1],
 //         ];
 //         assert_eq!(
-//             
+//
 // Solution::longest_increasing_path(matrix),
 //             4
 //         );
@@ -87,7 +87,7 @@ impl Solution {
 //             vec![2, 2, 1],
 //         ];
 //         assert_eq!(
-//             
+//
 // Solution::longest_increasing_path(matrix),
 //             4
 //         );
@@ -97,7 +97,7 @@ impl Solution {
 //     fn test_longest_increasing_path_example3()
 // {         let matrix = vec![vec![1]];
 //         assert_eq!(
-//             
+//
 // Solution::longest_increasing_path(matrix),
 //             1
 //         );
