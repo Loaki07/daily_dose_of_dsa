@@ -7,6 +7,9 @@ pub use lc_0070_climbing_stairs::*;
 pub mod lc_0198_house_robber;
 pub use lc_0198_house_robber::*;
 
+pub mod lc_0213_house_robber_2;
+pub use lc_0213_house_robber_2::*;
+
 pub mod lc_0300_longest_increasing_subsequence;
 pub use lc_0300_longest_increasing_subsequence::*;
 
