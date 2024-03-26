@@ -7,6 +7,9 @@ pub use lc_0027_remove_element::*;
 pub mod lc_0036_valid_sudoku;
 pub use lc_0036_valid_sudoku::*;
 
+pub mod lc_0041_first_missing_positive;
+pub use lc_0041_first_missing_positive::*;
+
 pub mod lc_0049_group_anagrams;
 pub use lc_0049_group_anagrams::*;
 
