@@ -12,3 +12,6 @@ pub use lc_0424_longest_repeating_character_replacement::*;
 
 pub mod lc_0567_permutaton_in_string;
 pub use lc_0567_permutaton_in_string::*;
+
+pub mod lc_2958_length_of_longest_subarray_with_at_most_k_frequency;
+pub use lc_2958_length_of_longest_subarray_with_at_most_k_frequency::*;
