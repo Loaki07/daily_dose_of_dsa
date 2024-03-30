@@ -16,6 +16,9 @@ pub use lc_0567_permutaton_in_string::*;
 pub mod lc_0713_subarray_product_less_than_k;
 pub use lc_0713_subarray_product_less_than_k::*;
 
+pub mod lc_0992_subsarrays_with_k_different_integers;
+pub use lc_0992_subsarrays_with_k_different_integers::*;
+
 pub mod lc_2958_length_of_longest_subarray_with_at_most_k_frequency;
 pub use lc_2958_length_of_longest_subarray_with_at_most_k_frequency::*;
 
