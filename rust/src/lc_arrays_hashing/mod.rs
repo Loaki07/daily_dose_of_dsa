@@ -13,6 +13,9 @@ pub use lc_0041_first_missing_positive::*;
 pub mod lc_0049_group_anagrams;
 pub use lc_0049_group_anagrams::*;
 
+pub mod lc_0056_merge_intervals;
+pub use lc_0056_merge_intervals::*;
+
 pub mod lc_0075_sort_colors;
 pub use lc_0075_sort_colors::*;
 
