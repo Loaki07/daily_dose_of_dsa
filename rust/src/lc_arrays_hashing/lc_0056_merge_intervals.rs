@@ -1,7 +1,30 @@
 pub struct Solution;
 
 impl Solution {
-    // O(n log n) time
+    // O(n) time | O(n) space
+    pub fn _merge_3(
+        intervals: Vec<Vec<i32>>,
+    ) -> Vec<Vec<i32>> {
+        use std::collections::BinaryHeap;
+
+        intervals
+            .into_iter()
+            .collect::<BinaryHeap<Vec<i32>>>()
+            .into_sorted_vec()
+            .into_iter()
+            .fold(vec![], |mut ans, x| {
+                let n = ans.len() - 1;
+                if ans.is_empty() || ans[n][1] < x[0] {
+                    ans.push(x);
+                    ans
+                } else {
+                    ans[n][1] = ans[n][1].max(x[1]);
+                    ans
+                }
+            })
+    }
+
+    // O(n log n) time | O(1) space
     pub fn merge(
         mut intervals: Vec<Vec<i32>>,
     ) -> Vec<Vec<i32>> {
@@ -22,6 +45,34 @@ impl Solution {
                 acc
             },
         )
+    }
+
+    // O(n log + n) time | O(1) space
+    pub fn _merge_2(
+        mut intervals: Vec<Vec<i32>>,
+    ) -> Vec<Vec<i32>> {
+        intervals.sort_unstable_by(|a, b| a[0].cmp(&b[0]));
+
+        let mut res = Vec::new();
+        let mut idx = 0;
+
+        for interval in intervals {
+            if res.is_empty() {
+                res.push(interval);
+                continue;
+            }
+
+            if res[idx][1] >= interval[0] {
+                if res[idx][1] < interval[1] {
+                    res[idx][1] = interval[1];
+                }
+            } else {
+                res.push(interval);
+                idx += 1;
+            }
+        }
+
+        res
     }
 }
 
