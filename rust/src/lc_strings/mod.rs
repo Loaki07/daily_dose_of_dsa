@@ -12,3 +12,6 @@ pub use lc_0383_ransom_note::*;
 
 pub mod lc_0409_longest_palindrome;
 pub use lc_0409_longest_palindrome::*;
+
+pub mod lc_1614_maximum_nesting_depth_of_the_parentheses;
+pub use lc_1614_maximum_nesting_depth_of_the_parentheses::*;
