@@ -21,3 +21,6 @@ pub use lc_0739_daily_temperatures::*;
 
 pub mod lc_0853_car_fleet;
 pub use lc_0853_car_fleet::*;
+
+pub mod lc_1544_make_the_string_great;
+pub use lc_1544_make_the_string_great::*;
