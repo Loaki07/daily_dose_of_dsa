@@ -70,6 +70,9 @@ pub use lc_1d_dynamic_programming::*;
 pub mod lc_2d_dynamic_programming;
 pub use lc_2d_dynamic_programming::*;
 
+pub mod lc_greedy;
+pub use lc_greedy::*;
+
 pub mod lc_bit_manipulation;
 pub use lc_bit_manipulation::*;
 
