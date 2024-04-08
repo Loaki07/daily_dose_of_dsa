@@ -42,3 +42,6 @@ pub use lc_0442_find_all_duplicates_in_an_array::*;
 
 pub mod lc_1572_matrix_diagonal_sum;
 pub use lc_1572_matrix_diagonal_sum::*;
+
+pub mod lc_1700_number_of_students_unable_to_eat_lunch;
+pub use lc_1700_number_of_students_unable_to_eat_lunch::*;
