@@ -45,3 +45,6 @@ pub use lc_1572_matrix_diagonal_sum::*;
 
 pub mod lc_1700_number_of_students_unable_to_eat_lunch;
 pub use lc_1700_number_of_students_unable_to_eat_lunch::*;
+
+pub mod lc_2073_time_needed_to_buy_tickets;
+pub use lc_2073_time_needed_to_buy_tickets::*;
