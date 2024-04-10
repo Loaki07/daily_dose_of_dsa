@@ -22,6 +22,9 @@ pub use lc_0739_daily_temperatures::*;
 pub mod lc_0853_car_fleet;
 pub use lc_0853_car_fleet::*;
 
+pub mod lc_0950_reveal_cards_in_increasing_order;
+pub use lc_0950_reveal_cards_in_increasing_order::*;
+
 pub mod lc_1249_minimum_remove_to_make_valid_parentheses;
 pub use lc_1249_minimum_remove_to_make_valid_parentheses::*;
 
