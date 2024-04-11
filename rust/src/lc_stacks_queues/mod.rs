@@ -16,6 +16,9 @@ pub use lc_0155_min_stack::*;
 pub mod lc_0232_implement_queue_using_stacks;
 pub use lc_0232_implement_queue_using_stacks::*;
 
+pub mod lc_0402_remove_k_digits;
+pub use lc_0402_remove_k_digits::*;
+
 pub mod lc_0739_daily_temperatures;
 pub use lc_0739_daily_temperatures::*;
 
