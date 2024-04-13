@@ -7,6 +7,9 @@ pub use lc_0022_generate_parentheses::*;
 pub mod lc_0084_largest_rectangle_in_histogram;
 pub use lc_0084_largest_rectangle_in_histogram::*;
 
+pub mod lc_0085_maximal_rectangle;
+pub use lc_0085_maximal_rectangle::*;
+
 pub mod lc_0150_evaluate_reverse_polish_notation;
 pub use lc_0150_evaluate_reverse_polish_notation::*;
 
