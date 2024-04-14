@@ -16,5 +16,8 @@ pub use lc_0226_invert_binary_tree::*;
 pub mod lc_0235_lowest_common_ancestor_of_a_binary_search_tree;
 pub use lc_0235_lowest_common_ancestor_of_a_binary_search_tree::*;
 
+pub mod lc_0404_sum_of_left_leaves;
+pub use lc_0404_sum_of_left_leaves::*;
+
 pub mod lc_0543_diameter_of_binary_tree;
 pub use lc_0543_diameter_of_binary_tree::*;
