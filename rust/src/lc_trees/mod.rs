@@ -10,6 +10,9 @@ pub use lc_0104_maximum_depth_of_binary_tree::*;
 pub mod lc_0110_balanced_binary_tree;
 pub use lc_0110_balanced_binary_tree::*;
 
+pub mod lc_0129_sum_root_to_leaf_numbers;
+pub use lc_0129_sum_root_to_leaf_numbers::*;
+
 pub mod lc_0226_invert_binary_tree;
 pub use lc_0226_invert_binary_tree::*;
 
