@@ -24,3 +24,6 @@ pub use lc_0404_sum_of_left_leaves::*;
 
 pub mod lc_0543_diameter_of_binary_tree;
 pub use lc_0543_diameter_of_binary_tree::*;
+
+pub mod lc_0623_add_one_row_to_tree;
+pub use lc_0623_add_one_row_to_tree::*;
