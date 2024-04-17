@@ -27,3 +27,6 @@ pub use lc_0543_diameter_of_binary_tree::*;
 
 pub mod lc_0623_add_one_row_to_tree;
 pub use lc_0623_add_one_row_to_tree::*;
+
+pub mod lc_0988_smallest_string_starting_from_leaf;
+pub use lc_0988_smallest_string_starting_from_leaf::*;
