@@ -3,6 +3,7 @@ use std::collections::HashSet;
 pub struct Solution;
 
 impl Solution {
+    // O(n*m) time | O(n*m) space
     pub fn island_perimeter(grid: Vec<Vec<i32>>) -> i32 {
         let mut visit: HashSet<(i32, i32)> = HashSet::new();
 
