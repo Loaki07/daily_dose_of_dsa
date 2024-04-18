@@ -4,6 +4,9 @@ pub use lc_0200_number_of_islands::*;
 pub mod lc_0207_course_schedule;
 pub use lc_0207_course_schedule::*;
 
+pub mod lc_0463_island_perimeter;
+pub use lc_0463_island_perimeter::*;
+
 pub mod lc_0733_flood_fill;
 pub use lc_0733_flood_fill::*;
 
