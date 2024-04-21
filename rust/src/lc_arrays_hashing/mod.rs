@@ -51,3 +51,6 @@ pub use lc_2073_time_needed_to_buy_tickets::*;
 
 pub mod lc_1992_find_all_groups_of_farmland;
 pub use lc_1992_find_all_groups_of_farmland::*;
+
+pub mod lc_1971_find_if_path_exists_in_graph;
+pub use lc_1971_find_if_path_exists_in_graph::*;
