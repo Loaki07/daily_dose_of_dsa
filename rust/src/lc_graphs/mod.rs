@@ -4,6 +4,9 @@ pub use lc_0200_number_of_islands::*;
 pub mod lc_0207_course_schedule;
 pub use lc_0207_course_schedule::*;
 
+pub mod lc_0310_minimum_height_trees;
+pub use lc_0310_minimum_height_trees::*;
+
 pub mod lc_0463_island_perimeter;
 pub use lc_0463_island_perimeter::*;
 
