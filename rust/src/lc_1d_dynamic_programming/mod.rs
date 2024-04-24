@@ -24,3 +24,6 @@ pub use lc_0647_palindromic_substring::*;
 
 pub mod lc_746_min_cost_climbing_stairs;
 pub use lc_746_min_cost_climbing_stairs::*;
+
+pub mod lc_1137_nth_tribonacci_number;
+pub use lc_1137_nth_tribonacci_number::*;
