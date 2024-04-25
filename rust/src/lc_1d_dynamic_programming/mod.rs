@@ -27,3 +27,6 @@ pub use lc_746_min_cost_climbing_stairs::*;
 
 pub mod lc_1137_nth_tribonacci_number;
 pub use lc_1137_nth_tribonacci_number::*;
+
+pub mod lc_2370_longest_ideal_subsequence;
+pub use lc_2370_longest_ideal_subsequence::*;
