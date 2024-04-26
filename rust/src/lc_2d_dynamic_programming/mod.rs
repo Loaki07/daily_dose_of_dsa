@@ -12,3 +12,6 @@ pub use lc_0518_coin_change_2::*;
 
 pub mod lc_1143_longest_common_subsequence;
 pub use lc_1143_longest_common_subsequence::*;
+
+pub mod lc_1289_minimuum_falling_path_sum_2;
+pub use lc_1289_minimuum_falling_path_sum_2::*;
