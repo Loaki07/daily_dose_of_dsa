@@ -19,6 +19,9 @@ pub use lc_0300_longest_increasing_subsequence::*;
 pub mod lc_0322_coin_change;
 pub use lc_0322_coin_change::*;
 
+pub mod lc_0514_freedom_trial;
+pub use lc_0514_freedom_trial::*;
+
 pub mod lc_0647_palindromic_substring;
 pub use lc_0647_palindromic_substring::*;
 
