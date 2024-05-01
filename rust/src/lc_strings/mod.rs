@@ -15,3 +15,6 @@ pub use lc_0409_longest_palindrome::*;
 
 pub mod lc_1614_maximum_nesting_depth_of_the_parentheses;
 pub use lc_1614_maximum_nesting_depth_of_the_parentheses::*;
+
+pub mod lc_2000_reverse_prefix_of_word;
+pub use lc_2000_reverse_prefix_of_word::*;
