@@ -24,3 +24,6 @@ pub use lc_0875_koko_eating_bananas::*;
 
 pub mod lc_0981_time_based_key_value_store;
 pub use lc_0981_time_based_key_value_store::*;
+
+pub mod lc_2441_largest_positive_integer_that_exists_with_its_negative;
+pub use lc_2441_largest_positive_integer_that_exists_with_its_negative::*;
