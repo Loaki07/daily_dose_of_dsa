@@ -1,6 +1,9 @@
 pub mod lc_0058_length_of_last_word;
 pub use lc_0058_length_of_last_word::*;
 
+pub mod lc_0165_compare_version_numbers;
+pub use lc_0165_compare_version_numbers::*;
+
 pub mod lc_0205_isomorphic_strings;
 pub use lc_0205_isomorphic_strings::*;
 
