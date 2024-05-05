@@ -1,3 +1,6 @@
+pub mod lc_0019_remove_nth_node_from_end_of_list;
+pub use lc_0019_remove_nth_node_from_end_of_list::*;
+
 pub mod lc_0021_merge_two_sorted_lists;
 pub use lc_0021_merge_two_sorted_lists::*;
 
