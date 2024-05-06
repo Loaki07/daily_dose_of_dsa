@@ -12,3 +12,6 @@ pub use lc_0206_reverse_linked_list::*;
 
 pub mod lc_0876_middle_of_the_linked_list;
 pub use lc_0876_middle_of_the_linked_list::*;
+
+pub mod lc_2487_remove_nodes_from_linked_list;
+pub use lc_2487_remove_nodes_from_linked_list::*;
