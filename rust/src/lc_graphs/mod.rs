@@ -16,5 +16,8 @@ pub use lc_0733_flood_fill::*;
 pub mod lc_0542_01_matrix;
 pub use lc_0542_01_matrix::*;
 
+pub mod lc_0547_number_of_provinces;
+pub use lc_0547_number_of_provinces::*;
+
 pub mod lc_0695_max_area_of_island;
 pub use lc_0695_max_area_of_island::*;
