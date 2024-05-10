@@ -43,6 +43,9 @@ pub use lc_0442_find_all_duplicates_in_an_array::*;
 pub mod lc_0752_open_the_lock;
 pub use lc_0752_open_the_lock::*;
 
+pub mod lc_0786_kth_smallest_prime_fraction;
+pub use lc_0786_kth_smallest_prime_fraction::*;
+
 pub mod lc_1572_matrix_diagonal_sum;
 pub use lc_1572_matrix_diagonal_sum::*;
 
