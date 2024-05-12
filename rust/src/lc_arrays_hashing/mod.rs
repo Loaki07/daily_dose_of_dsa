@@ -52,11 +52,14 @@ pub use lc_1572_matrix_diagonal_sum::*;
 pub mod lc_1700_number_of_students_unable_to_eat_lunch;
 pub use lc_1700_number_of_students_unable_to_eat_lunch::*;
 
-pub mod lc_2073_time_needed_to_buy_tickets;
-pub use lc_2073_time_needed_to_buy_tickets::*;
-
 pub mod lc_1992_find_all_groups_of_farmland;
 pub use lc_1992_find_all_groups_of_farmland::*;
 
 pub mod lc_1971_find_if_path_exists_in_graph;
 pub use lc_1971_find_if_path_exists_in_graph::*;
+
+pub mod lc_2073_time_needed_to_buy_tickets;
+pub use lc_2073_time_needed_to_buy_tickets::*;
+
+pub mod lc_2373_largest_local_values_in_a_matrix;
+pub use lc_2373_largest_local_values_in_a_matrix::*;
