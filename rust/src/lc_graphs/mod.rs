@@ -24,3 +24,6 @@ pub use lc_0695_max_area_of_island::*;
 
 pub mod lc_1219_path_with_maximum_gold;
 pub use lc_1219_path_with_maximum_gold::*;
+
+pub mod lc_2812_find_the_safest_path_in_a_grid;
+pub use lc_2812_find_the_safest_path_in_a_grid::*;
