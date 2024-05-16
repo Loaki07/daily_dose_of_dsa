@@ -33,3 +33,6 @@ pub use lc_0843_sum_of_distances_in_tree::*;
 
 pub mod lc_0988_smallest_string_starting_from_leaf;
 pub use lc_0988_smallest_string_starting_from_leaf::*;
+
+pub mod lc_2331_evaluate_boolean_binary_tree;
+pub use lc_2331_evaluate_boolean_binary_tree::*;
