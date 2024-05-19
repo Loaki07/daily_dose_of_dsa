@@ -42,3 +42,6 @@ pub use lc_1325_delete_leaves_with_a_given_value::*;
 
 pub mod lc_2331_evaluate_boolean_binary_tree;
 pub use lc_2331_evaluate_boolean_binary_tree::*;
+
+pub mod lc_3068_find_the_maximum_sum_of_node_values;
+pub use lc_3068_find_the_maximum_sum_of_node_values::*;
