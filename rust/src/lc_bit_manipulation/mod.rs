@@ -1,6 +1,9 @@
 pub mod lc_0067_add_binary;
 pub use lc_0067_add_binary::*;
 
+pub mod lc_1863_sum_of_all_subset_xor_totals;
+pub use lc_1863_sum_of_all_subset_xor_totals::*;
+
 pub mod lc_1915_number_of_wonderful_substrings;
 pub use lc_1915_number_of_wonderful_substrings::*;
 
