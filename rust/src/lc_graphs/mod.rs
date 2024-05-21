@@ -22,6 +22,9 @@ pub use lc_0547_number_of_provinces::*;
 pub mod lc_0695_max_area_of_island;
 pub use lc_0695_max_area_of_island::*;
 
+pub mod lc_0994_rotting_oranges;
+pub use lc_0994_rotting_oranges::*;
+
 pub mod lc_1219_path_with_maximum_gold;
 pub use lc_1219_path_with_maximum_gold::*;
 
