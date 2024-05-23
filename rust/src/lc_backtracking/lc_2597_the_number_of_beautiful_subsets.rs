@@ -2,9 +2,10 @@ pub struct Solution;
 
 impl Solution {
     pub fn beautiful_subsets(
-        nums: Vec<i32>,
+        mut nums: Vec<i32>,
         k: i32,
     ) -> i32 {
+        nums.sort_unstable();
         let mut result = 0;
         let mut visited = [false; 1000];
         Self::backtrack(
@@ -17,7 +18,6 @@ impl Solution {
         );
         result
     }
-
     pub fn backtrack(
         nums: &Vec<i32>,
         k: i32,
@@ -32,7 +32,6 @@ impl Solution {
             }
             return;
         }
-
         Self::backtrack(
             nums,
             k,
