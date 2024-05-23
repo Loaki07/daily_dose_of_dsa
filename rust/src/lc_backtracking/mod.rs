@@ -24,3 +24,6 @@ pub use lc_0090_subsets_2::*;
 
 pub mod lc_0131_palindrome_partitioning;
 pub use lc_0131_palindrome_partitioning::*;
+
+pub mod lc_2597_the_number_of_beautiful_subsets;
+pub use lc_2597_the_number_of_beautiful_subsets::*;
