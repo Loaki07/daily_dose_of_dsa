@@ -25,5 +25,11 @@ pub use lc_0090_subsets_2::*;
 pub mod lc_0131_palindrome_partitioning;
 pub use lc_0131_palindrome_partitioning::*;
 
+pub mod lc_0140_word_break_2;
+pub use lc_0140_word_break_2::*;
+
+pub mod lc_1255_maximum_score_words_formed_by_letters;
+pub use lc_1255_maximum_score_words_formed_by_letters::*;
+
 pub mod lc_2597_the_number_of_beautiful_subsets;
 pub use lc_2597_the_number_of_beautiful_subsets::*;
