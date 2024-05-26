@@ -1,0 +1,95 @@
+# Ignore object files, shared libraries, and executable files
+*.out
+*.o
+*.obj
+*.so
+*.exe
+*.dll
+*.dylib
+
+# Ignore build directories and output directories
+/build/
+/bin/
+/out/
+/dist/
+/Debug/
+/Release/
+/x64/
+/x86/
+
+# Ignore common editor and IDE specific files
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+*.idea/
+*.project
+*.cproject
+*.code-workspace
+
+# Ignore backup and temporary files
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+
+# Ignore compiled code and generated files
+*.gch
+*.pch
+*.class
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore other unwanted files and directories
+.vscode/
+.ipynb_checkpoints/
+.env
+*.log
+*.pyc
+__pycache__/
+*.cache
+*.cmake
+*.d
+
+# Ignore CMake build directories
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore testing and profiling output
+*.gcda
+*.gcno
+*.gcov
+*.prof
+
+# Ignore custom settings or configuration files
+*.user
+*.suo
+*.opendb
+*.opensdf
+*.ncb
+*.sdf
+*.ilk
+*.idb
+*.pdb
+*.log
+
+# Ignore coverage results
+coverage/
+*.lcov
+
+# Ignore temporary files created by editors
+*.sublime-workspace
+*.swp
+*.swo
+*.log
+*.tmp
+
+# Ignore CLion generated files
+cmake-build-*/
+
+# Ignore JetBrains Rider generated files
+.idea/
