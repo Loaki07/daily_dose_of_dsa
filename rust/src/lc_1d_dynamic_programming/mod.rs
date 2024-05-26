@@ -22,6 +22,9 @@ pub use lc_0322_coin_change::*;
 pub mod lc_0514_freedom_trial;
 pub use lc_0514_freedom_trial::*;
 
+pub mod lc_0552_student_attendance_record_2;
+pub use lc_0552_student_attendance_record_2::*;
+
 pub mod lc_0647_palindromic_substring;
 pub use lc_0647_palindromic_substring::*;
 

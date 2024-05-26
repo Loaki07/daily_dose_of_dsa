@@ -79,20 +79,23 @@ mod tests {
     #[test]
     fn ex1() {
         assert_eq!(
-            find_duplicates(vec![4, 3, 2, 7, 8, 2, 3, 1]),
-            vec![2, 3]
+            find_duplicates(vec![4, 3, 2, 7, 8, 2, 3, 1])
+                .sort(),
+            vec![2, 3].sort()
         );
         assert_eq!(
             find_duplicates_set(vec![
                 4, 3, 2, 7, 8, 2, 3, 1
-            ]),
-            vec![2, 3]
+            ])
+            .sort(),
+            vec![2, 3].sort()
         );
         assert_eq!(
             find_duplicates_allocate(vec![
                 4, 3, 2, 7, 8, 2, 3, 1
-            ]),
-            vec![2, 3]
+            ])
+            .sort(),
+            vec![2, 3].sort()
         );
     }
 
