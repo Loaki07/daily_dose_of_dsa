@@ -19,6 +19,9 @@ pub use lc_0713_subarray_product_less_than_k::*;
 pub mod lc_0992_subsarrays_with_k_different_integers;
 pub use lc_0992_subsarrays_with_k_different_integers::*;
 
+pub mod lc_1208_get_equal_substrings_within_budget;
+pub use lc_1208_get_equal_substrings_within_budget::*;
+
 pub mod lc_2444_count_subarrays_with_fixed_bounds;
 pub use lc_2444_count_subarrays_with_fixed_bounds::*;
 
