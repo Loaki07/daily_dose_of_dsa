@@ -1,6 +1,9 @@
 pub mod lc_0067_add_binary;
 pub use lc_0067_add_binary::*;
 
+pub mod lc_0260_single_number_3;
+pub use lc_0260_single_number_3::*;
+
 pub mod lc_1404_number_of_steps_to_reduce_a_number_in_binary_representation_to_one;
 pub use lc_1404_number_of_steps_to_reduce_a_number_in_binary_representation_to_one::*;
 
