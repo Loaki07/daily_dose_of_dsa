@@ -21,3 +21,6 @@ pub use lc_1614_maximum_nesting_depth_of_the_parentheses::*;
 
 pub mod lc_2000_reverse_prefix_of_word;
 pub use lc_2000_reverse_prefix_of_word::*;
+
+pub mod lc_3110_score_of_a_string;
+pub use lc_3110_score_of_a_string::*;
