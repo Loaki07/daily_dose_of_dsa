@@ -10,6 +10,9 @@ pub use lc_0205_isomorphic_strings::*;
 pub mod lc_0242_valid_anagram;
 pub use lc_0242_valid_anagram::*;
 
+pub mod lc_0344_reverse_string;
+pub use lc_0344_reverse_string::*;
+
 pub mod lc_0383_ransom_note;
 pub use lc_0383_ransom_note::*;
 
