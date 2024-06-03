@@ -15,3 +15,6 @@ pub use lc_0167_two_sum_2_input_array_is_sorted::*;
 
 pub mod lc_0881_boats_to_save_people;
 pub use lc_0881_boats_to_save_people::*;
+
+pub mod lc_2486_append_characters_to_string_to_make_subsequence;
+pub use lc_2486_append_characters_to_string_to_make_subsequence::*;
