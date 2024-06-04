@@ -5,6 +5,7 @@ pub mod lc_0207_course_schedule;
 pub use lc_0207_course_schedule::*;
 
 pub mod lc_0210_course_schedule_2;
+pub use lc_0210_course_schedule_2::*;
 
 pub mod lc_0310_minimum_height_trees;
 pub use lc_0310_minimum_height_trees::*;
