@@ -40,6 +40,9 @@ pub use lc_0347_top_k_frequent_elements::*;
 pub mod lc_0442_find_all_duplicates_in_an_array;
 pub use lc_0442_find_all_duplicates_in_an_array::*;
 
+pub mod lc_0523_continuous_subarray_sum;
+pub use lc_0523_continuous_subarray_sum::*;
+
 pub mod lc_0752_open_the_lock;
 pub use lc_0752_open_the_lock::*;
 
