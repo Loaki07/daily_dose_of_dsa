@@ -58,6 +58,9 @@ pub use lc_0974_subarray_sums_divisible_by_k::*;
 pub mod lc_1051_height_checker;
 pub use lc_1051_height_checker::*;
 
+pub mod lc_1122_relative_sort_array;
+pub use lc_1122_relative_sort_array::*;
+
 pub mod lc_1572_matrix_diagonal_sum;
 pub use lc_1572_matrix_diagonal_sum::*;
 
