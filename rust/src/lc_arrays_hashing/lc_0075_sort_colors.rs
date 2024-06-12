@@ -2,6 +2,16 @@ pub struct Solution;
 
 impl Solution {
     pub fn sort_colors(nums: &mut Vec<i32>) {
+        for i in 1..nums.len() {
+            let mut j = i;
+            while j > 0 && nums[j] < nums[j - 1] {
+                nums.swap(j, j - 1);
+                j = j - 1;
+            }
+        }
+    }
+
+    pub fn _sort_colors(nums: &mut Vec<i32>) {
         let mut i = 0; // front pointer
         let mut j = 0; // middle pointer
         let mut k = nums.len() - 1; // back pointer
@@ -23,7 +33,7 @@ impl Solution {
                 // mid
                 2 => {
                     nums.swap(j, k);
-                    // condional to handle negative k,
+                    // conditional to handle negative k,
                     // index out of bounds
                     if k < 2 {
                         break;
@@ -35,7 +45,7 @@ impl Solution {
         }
     }
 
-    pub fn _sort_colors(nums: &mut Vec<i32>) {
+    pub fn __sort_colors(nums: &mut Vec<i32>) {
         let mut count = [0, 0, 0];
 
         for n in nums.iter() {
