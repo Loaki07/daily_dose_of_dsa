@@ -73,6 +73,9 @@ pub use lc_1992_find_all_groups_of_farmland::*;
 pub mod lc_1971_find_if_path_exists_in_graph;
 pub use lc_1971_find_if_path_exists_in_graph::*;
 
+pub mod lc_2037_minimum_number_of_moves_to_seat_everyone;
+pub use lc_2037_minimum_number_of_moves_to_seat_everyone::*;
+
 pub mod lc_2073_time_needed_to_buy_tickets;
 pub use lc_2073_time_needed_to_buy_tickets::*;
 
