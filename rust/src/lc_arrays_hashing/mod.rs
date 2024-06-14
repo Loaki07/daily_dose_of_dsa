@@ -52,6 +52,9 @@ pub use lc_0752_open_the_lock::*;
 pub mod lc_0786_kth_smallest_prime_fraction;
 pub use lc_0786_kth_smallest_prime_fraction::*;
 
+pub mod lc_0945_minimum_increment_to_make_array_unique;
+pub use lc_0945_minimum_increment_to_make_array_unique::*;
+
 pub mod lc_0974_subarray_sums_divisible_by_k;
 pub use lc_0974_subarray_sums_divisible_by_k::*;
 
