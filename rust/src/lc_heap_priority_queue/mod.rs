@@ -1,6 +1,9 @@
 pub mod lc_0215_kth_largest_element_in_an_array;
 pub use lc_0215_kth_largest_element_in_an_array::*;
 
+pub mod lc_0502_ipo;
+pub use lc_0502_ipo::*;
+
 pub mod lc_0506_relative_ranks;
 pub use lc_0506_relative_ranks::*;
 
