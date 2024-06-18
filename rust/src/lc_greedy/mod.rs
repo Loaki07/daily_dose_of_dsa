@@ -7,6 +7,9 @@ pub use lc_0330_patching_array::*;
 pub mod lc_0678_valid_parenthesis_string;
 pub use lc_0678_valid_parenthesis_string::*;
 
+pub mod lc_0826_most_profit_assigning_work;
+pub use lc_0826_most_profit_assigning_work::*;
+
 pub mod lc_0846_hand_of_straights;
 pub use lc_0846_hand_of_straights::*;
 
