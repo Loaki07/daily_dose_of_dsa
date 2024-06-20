@@ -28,6 +28,9 @@ pub use lc_0981_time_based_key_value_store::*;
 pub mod lc_1482_minimum_number_of_days_to_make_m_boquets;
 pub use lc_1482_minimum_number_of_days_to_make_m_boquets::*;
 
+pub mod lc_1552_magnetic_force_between_two_balls;
+pub use lc_1552_magnetic_force_between_two_balls::*;
+
 pub mod lc_1608_special_array_with_x_elements_greater_than_or_equal_x;
 pub use lc_1608_special_array_with_x_elements_greater_than_or_equal_x::*;
 
