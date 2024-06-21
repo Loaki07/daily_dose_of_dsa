@@ -1,8 +1,8 @@
 pub struct Solution;
 
 impl Solution {
-    // O(n log n + n log D/m) time where D = pos(n-1) - pos(0)
-    // O(1) space
+    // O(n log n + n log D/m) time where D = pos(n-1)
+    // - pos(0) | O(1) space
     pub fn max_distance(position: Vec<i32>, m: i32) -> i32 {
         let mut position = position;
 

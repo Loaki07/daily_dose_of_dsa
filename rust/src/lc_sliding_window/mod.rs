@@ -19,6 +19,9 @@ pub use lc_0713_subarray_product_less_than_k::*;
 pub mod lc_0992_subsarrays_with_k_different_integers;
 pub use lc_0992_subsarrays_with_k_different_integers::*;
 
+pub mod lc_1052_grumpy_bookstore_owner;
+pub use lc_1052_grumpy_bookstore_owner::*;
+
 pub mod lc_1208_get_equal_substrings_within_budget;
 pub use lc_1208_get_equal_substrings_within_budget::*;
 
