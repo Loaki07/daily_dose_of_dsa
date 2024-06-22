@@ -25,6 +25,9 @@ pub use lc_1052_grumpy_bookstore_owner::*;
 pub mod lc_1208_get_equal_substrings_within_budget;
 pub use lc_1208_get_equal_substrings_within_budget::*;
 
+pub mod lc_1248_count_number_of_nice_subarrays;
+pub use lc_1248_count_number_of_nice_subarrays::*;
+
 pub mod lc_2444_count_subarrays_with_fixed_bounds;
 pub use lc_2444_count_subarrays_with_fixed_bounds::*;
 
