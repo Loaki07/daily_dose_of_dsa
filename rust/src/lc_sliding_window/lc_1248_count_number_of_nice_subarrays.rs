@@ -16,7 +16,7 @@ impl Solution {
             }
 
             while odd > k {
-                if nums[left] % 2 != 0{
+                if nums[left] % 2 != 0 {
                     odd -= 1;
                 }
                 left += 1;

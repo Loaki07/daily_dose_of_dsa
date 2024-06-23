@@ -28,6 +28,9 @@ pub use lc_1208_get_equal_substrings_within_budget::*;
 pub mod lc_1248_count_number_of_nice_subarrays;
 pub use lc_1248_count_number_of_nice_subarrays::*;
 
+pub mod lc_1438_longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit;
+pub use lc_1438_longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit::*;
+
 pub mod lc_2444_count_subarrays_with_fixed_bounds;
 pub use lc_2444_count_subarrays_with_fixed_bounds::*;
 
