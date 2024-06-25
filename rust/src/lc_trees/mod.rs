@@ -37,6 +37,9 @@ pub use lc_0979_distribute_coins_in_binary_tree::*;
 pub mod lc_0988_smallest_string_starting_from_leaf;
 pub use lc_0988_smallest_string_starting_from_leaf::*;
 
+pub mod lc_1038_binary_search_tree_to_greater_sum_tree;
+pub use lc_1038_binary_search_tree_to_greater_sum_tree::*;
+
 pub mod lc_1325_delete_leaves_with_a_given_value;
 pub use lc_1325_delete_leaves_with_a_given_value::*;
 
