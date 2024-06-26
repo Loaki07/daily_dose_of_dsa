@@ -43,6 +43,9 @@ pub use lc_1038_binary_search_tree_to_greater_sum_tree::*;
 pub mod lc_1325_delete_leaves_with_a_given_value;
 pub use lc_1325_delete_leaves_with_a_given_value::*;
 
+pub mod lc_1382_balance_a_binary_search_tree;
+pub use lc_1382_balance_a_binary_search_tree::*;
+
 pub mod lc_2331_evaluate_boolean_binary_tree;
 pub use lc_2331_evaluate_boolean_binary_tree::*;
 
