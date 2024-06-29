@@ -22,9 +22,11 @@ impl Solution {
         }
 
         (1..)
-            .zip((0..)
-            .zip(counts)
-            .flat_map(|(deg, n)| repeat(deg).take(n)))
+            .zip(
+                (0..).zip(counts).flat_map(|(deg, n)| {
+                    repeat(deg).take(n)
+                }),
+            )
             .map(|(vert, deg)| vert * deg)
             .sum()
     }

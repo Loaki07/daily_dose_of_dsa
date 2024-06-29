@@ -37,6 +37,9 @@ pub use lc_1219_path_with_maximum_gold::*;
 pub mod lc_1791_find_center_of_star_graph;
 pub use lc_1791_find_center_of_star_graph::*;
 
+pub mod lc_2192_all_ancestors_of_a_node_in_a_directed_acyclic_graph;
+pub use lc_2192_all_ancestors_of_a_node_in_a_directed_acyclic_graph::*;
+
 pub mod lc_2285_maximum_total_importance_of_roads;
 pub use lc_2285_maximum_total_importance_of_roads::*;
 
