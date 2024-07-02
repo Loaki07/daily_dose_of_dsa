@@ -37,6 +37,9 @@ pub use lc_0271_encode_decode_strings::*;
 pub mod lc_0347_top_k_frequent_elements;
 pub use lc_0347_top_k_frequent_elements::*;
 
+pub mod lc_0350_intersection_of_two_arrays_2;
+pub use lc_0350_intersection_of_two_arrays_2::*;
+
 pub mod lc_0442_find_all_duplicates_in_an_array;
 pub use lc_0442_find_all_duplicates_in_an_array::*;
 
